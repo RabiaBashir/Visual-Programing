@@ -1,0 +1,6 @@
+C:\Users\Aabi.com\Documents\Visual Studio 2013\Projects\ClassPracticeVp\ClassPracticeVp\bin\Debug\ClassPracticeVp.exe.config
+C:\Users\Aabi.com\Documents\Visual Studio 2013\Projects\ClassPracticeVp\ClassPracticeVp\bin\Debug\ClassPracticeVp.exe
+C:\Users\Aabi.com\Documents\Visual Studio 2013\Projects\ClassPracticeVp\ClassPracticeVp\bin\Debug\ClassPracticeVp.pdb
+C:\Users\Aabi.com\Documents\Visual Studio 2013\Projects\ClassPracticeVp\ClassPracticeVp\obj\Debug\ClassPracticeVp.csprojResolveAssemblyReference.cache
+C:\Users\Aabi.com\Documents\Visual Studio 2013\Projects\ClassPracticeVp\ClassPracticeVp\obj\Debug\ClassPracticeVp.exe
+C:\Users\Aabi.com\Documents\Visual Studio 2013\Projects\ClassPracticeVp\ClassPracticeVp\obj\Debug\ClassPracticeVp.pdb
