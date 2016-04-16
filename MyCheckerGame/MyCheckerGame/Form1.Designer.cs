@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.boardPanel = new System.Windows.Forms.Panel();
             this.pictureBox67 = new System.Windows.Forms.PictureBox();
             this.pictureBox63 = new System.Windows.Forms.PictureBox();
             this.pictureBox62 = new System.Windows.Forms.PictureBox();
@@ -94,7 +94,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.boardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox67)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox63)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox62)).BeginInit();
@@ -161,81 +161,81 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // boardPanel
             // 
-            this.panel1.AccessibleDescription = "BoxClicked";
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.pictureBox67);
-            this.panel1.Controls.Add(this.pictureBox63);
-            this.panel1.Controls.Add(this.pictureBox62);
-            this.panel1.Controls.Add(this.pictureBox61);
-            this.panel1.Controls.Add(this.pictureBox60);
-            this.panel1.Controls.Add(this.pictureBox59);
-            this.panel1.Controls.Add(this.pictureBox58);
-            this.panel1.Controls.Add(this.pictureBox57);
-            this.panel1.Controls.Add(this.pictureBox56);
-            this.panel1.Controls.Add(this.pictureBox55);
-            this.panel1.Controls.Add(this.pictureBox54);
-            this.panel1.Controls.Add(this.pictureBox53);
-            this.panel1.Controls.Add(this.pictureBox52);
-            this.panel1.Controls.Add(this.pictureBox51);
-            this.panel1.Controls.Add(this.pictureBox50);
-            this.panel1.Controls.Add(this.pictureBox49);
-            this.panel1.Controls.Add(this.pictureBox48);
-            this.panel1.Controls.Add(this.pictureBox47);
-            this.panel1.Controls.Add(this.pictureBox46);
-            this.panel1.Controls.Add(this.pictureBox45);
-            this.panel1.Controls.Add(this.pictureBox44);
-            this.panel1.Controls.Add(this.pictureBox43);
-            this.panel1.Controls.Add(this.pictureBox42);
-            this.panel1.Controls.Add(this.pictureBox41);
-            this.panel1.Controls.Add(this.pictureBox40);
-            this.panel1.Controls.Add(this.pictureBox39);
-            this.panel1.Controls.Add(this.pictureBox38);
-            this.panel1.Controls.Add(this.pictureBox37);
-            this.panel1.Controls.Add(this.pictureBox36);
-            this.panel1.Controls.Add(this.pictureBox35);
-            this.panel1.Controls.Add(this.pictureBox34);
-            this.panel1.Controls.Add(this.pictureBox33);
-            this.panel1.Controls.Add(this.pictureBox32);
-            this.panel1.Controls.Add(this.pictureBox31);
-            this.panel1.Controls.Add(this.pictureBox30);
-            this.panel1.Controls.Add(this.pictureBox29);
-            this.panel1.Controls.Add(this.pictureBox28);
-            this.panel1.Controls.Add(this.pictureBox27);
-            this.panel1.Controls.Add(this.pictureBox26);
-            this.panel1.Controls.Add(this.pictureBox25);
-            this.panel1.Controls.Add(this.pictureBox24);
-            this.panel1.Controls.Add(this.pictureBox23);
-            this.panel1.Controls.Add(this.pictureBox22);
-            this.panel1.Controls.Add(this.pictureBox21);
-            this.panel1.Controls.Add(this.pictureBox20);
-            this.panel1.Controls.Add(this.pictureBox19);
-            this.panel1.Controls.Add(this.pictureBox18);
-            this.panel1.Controls.Add(this.pictureBox17);
-            this.panel1.Controls.Add(this.pictureBox16);
-            this.panel1.Controls.Add(this.pictureBox15);
-            this.panel1.Controls.Add(this.pictureBox14);
-            this.panel1.Controls.Add(this.pictureBox13);
-            this.panel1.Controls.Add(this.pictureBox12);
-            this.panel1.Controls.Add(this.pictureBox11);
-            this.panel1.Controls.Add(this.pictureBox10);
-            this.panel1.Controls.Add(this.pictureBox9);
-            this.panel1.Controls.Add(this.pictureBox8);
-            this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(1, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(883, 531);
-            this.panel1.TabIndex = 0;
-            this.panel1.Tag = "70,70";
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.boardPanel.AccessibleDescription = "BoxClicked";
+            this.boardPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.boardPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boardPanel.BackgroundImage")));
+            this.boardPanel.Controls.Add(this.pictureBox67);
+            this.boardPanel.Controls.Add(this.pictureBox63);
+            this.boardPanel.Controls.Add(this.pictureBox62);
+            this.boardPanel.Controls.Add(this.pictureBox61);
+            this.boardPanel.Controls.Add(this.pictureBox60);
+            this.boardPanel.Controls.Add(this.pictureBox59);
+            this.boardPanel.Controls.Add(this.pictureBox58);
+            this.boardPanel.Controls.Add(this.pictureBox57);
+            this.boardPanel.Controls.Add(this.pictureBox56);
+            this.boardPanel.Controls.Add(this.pictureBox55);
+            this.boardPanel.Controls.Add(this.pictureBox54);
+            this.boardPanel.Controls.Add(this.pictureBox53);
+            this.boardPanel.Controls.Add(this.pictureBox52);
+            this.boardPanel.Controls.Add(this.pictureBox51);
+            this.boardPanel.Controls.Add(this.pictureBox50);
+            this.boardPanel.Controls.Add(this.pictureBox49);
+            this.boardPanel.Controls.Add(this.pictureBox48);
+            this.boardPanel.Controls.Add(this.pictureBox47);
+            this.boardPanel.Controls.Add(this.pictureBox46);
+            this.boardPanel.Controls.Add(this.pictureBox45);
+            this.boardPanel.Controls.Add(this.pictureBox44);
+            this.boardPanel.Controls.Add(this.pictureBox43);
+            this.boardPanel.Controls.Add(this.pictureBox42);
+            this.boardPanel.Controls.Add(this.pictureBox41);
+            this.boardPanel.Controls.Add(this.pictureBox40);
+            this.boardPanel.Controls.Add(this.pictureBox39);
+            this.boardPanel.Controls.Add(this.pictureBox38);
+            this.boardPanel.Controls.Add(this.pictureBox37);
+            this.boardPanel.Controls.Add(this.pictureBox36);
+            this.boardPanel.Controls.Add(this.pictureBox35);
+            this.boardPanel.Controls.Add(this.pictureBox34);
+            this.boardPanel.Controls.Add(this.pictureBox33);
+            this.boardPanel.Controls.Add(this.pictureBox32);
+            this.boardPanel.Controls.Add(this.pictureBox31);
+            this.boardPanel.Controls.Add(this.pictureBox30);
+            this.boardPanel.Controls.Add(this.pictureBox29);
+            this.boardPanel.Controls.Add(this.pictureBox28);
+            this.boardPanel.Controls.Add(this.pictureBox27);
+            this.boardPanel.Controls.Add(this.pictureBox26);
+            this.boardPanel.Controls.Add(this.pictureBox25);
+            this.boardPanel.Controls.Add(this.pictureBox24);
+            this.boardPanel.Controls.Add(this.pictureBox23);
+            this.boardPanel.Controls.Add(this.pictureBox22);
+            this.boardPanel.Controls.Add(this.pictureBox21);
+            this.boardPanel.Controls.Add(this.pictureBox20);
+            this.boardPanel.Controls.Add(this.pictureBox19);
+            this.boardPanel.Controls.Add(this.pictureBox18);
+            this.boardPanel.Controls.Add(this.pictureBox17);
+            this.boardPanel.Controls.Add(this.pictureBox16);
+            this.boardPanel.Controls.Add(this.pictureBox15);
+            this.boardPanel.Controls.Add(this.pictureBox14);
+            this.boardPanel.Controls.Add(this.pictureBox13);
+            this.boardPanel.Controls.Add(this.pictureBox12);
+            this.boardPanel.Controls.Add(this.pictureBox11);
+            this.boardPanel.Controls.Add(this.pictureBox10);
+            this.boardPanel.Controls.Add(this.pictureBox9);
+            this.boardPanel.Controls.Add(this.pictureBox8);
+            this.boardPanel.Controls.Add(this.pictureBox7);
+            this.boardPanel.Controls.Add(this.pictureBox6);
+            this.boardPanel.Controls.Add(this.pictureBox5);
+            this.boardPanel.Controls.Add(this.pictureBox4);
+            this.boardPanel.Controls.Add(this.pictureBox3);
+            this.boardPanel.Controls.Add(this.pictureBox2);
+            this.boardPanel.Controls.Add(this.pictureBox1);
+            this.boardPanel.Location = new System.Drawing.Point(1, -1);
+            this.boardPanel.Name = "boardPanel";
+            this.boardPanel.Size = new System.Drawing.Size(883, 531);
+            this.boardPanel.TabIndex = 0;
+            this.boardPanel.Tag = "70,70";
+            this.boardPanel.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox67
             // 
@@ -245,7 +245,7 @@
             this.pictureBox67.TabIndex = 66;
             this.pictureBox67.TabStop = false;
             this.pictureBox67.Tag = "70,70";
-            this.pictureBox67.Click += new System.EventHandler(this.pictureBox67_Click);
+            this.pictureBox67.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox63
             // 
@@ -255,10 +255,11 @@
             this.pictureBox63.TabIndex = 62;
             this.pictureBox63.TabStop = false;
             this.pictureBox63.Tag = "70,70";
-            this.pictureBox63.Click += new System.EventHandler(this.pictureBox63_Click);
+            this.pictureBox63.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox62
             // 
+            this.pictureBox62.AccessibleName = "red";
             this.pictureBox62.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox62.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox62.BackgroundImage")));
             this.pictureBox62.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -268,7 +269,7 @@
             this.pictureBox62.TabIndex = 61;
             this.pictureBox62.TabStop = false;
             this.pictureBox62.Tag = "70,70";
-            this.pictureBox62.Click += new System.EventHandler(this.pictureBox62_Click);
+            this.pictureBox62.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox61
             // 
@@ -278,10 +279,11 @@
             this.pictureBox61.TabIndex = 60;
             this.pictureBox61.TabStop = false;
             this.pictureBox61.Tag = "70,70";
-            this.pictureBox61.Click += new System.EventHandler(this.pictureBox61_Click);
+            this.pictureBox61.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox60
             // 
+            this.pictureBox60.AccessibleName = "red";
             this.pictureBox60.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox60.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox60.BackgroundImage")));
             this.pictureBox60.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -291,7 +293,7 @@
             this.pictureBox60.TabIndex = 59;
             this.pictureBox60.TabStop = false;
             this.pictureBox60.Tag = "70,70";
-            this.pictureBox60.Click += new System.EventHandler(this.pictureBox60_Click);
+            this.pictureBox60.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox59
             // 
@@ -301,10 +303,11 @@
             this.pictureBox59.TabIndex = 58;
             this.pictureBox59.TabStop = false;
             this.pictureBox59.Tag = "70,70";
-            this.pictureBox59.Click += new System.EventHandler(this.pictureBox59_Click);
+            this.pictureBox59.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox58
             // 
+            this.pictureBox58.AccessibleName = "red";
             this.pictureBox58.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox58.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox58.BackgroundImage")));
             this.pictureBox58.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -314,10 +317,11 @@
             this.pictureBox58.TabIndex = 57;
             this.pictureBox58.TabStop = false;
             this.pictureBox58.Tag = "70,70";
-            this.pictureBox58.Click += new System.EventHandler(this.pictureBox58_Click);
+            this.pictureBox58.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox57
             // 
+            this.pictureBox57.AccessibleName = "red";
             this.pictureBox57.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox57.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox57.BackgroundImage")));
             this.pictureBox57.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -327,7 +331,7 @@
             this.pictureBox57.TabIndex = 56;
             this.pictureBox57.TabStop = false;
             this.pictureBox57.Tag = "70,70";
-            this.pictureBox57.Click += new System.EventHandler(this.pictureBox57_Click);
+            this.pictureBox57.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox56
             // 
@@ -337,10 +341,11 @@
             this.pictureBox56.TabIndex = 55;
             this.pictureBox56.TabStop = false;
             this.pictureBox56.Tag = "70,70";
-            this.pictureBox56.Click += new System.EventHandler(this.pictureBox56_Click);
+            this.pictureBox56.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox55
             // 
+            this.pictureBox55.AccessibleName = "red";
             this.pictureBox55.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox55.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox55.BackgroundImage")));
             this.pictureBox55.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -350,7 +355,7 @@
             this.pictureBox55.TabIndex = 54;
             this.pictureBox55.TabStop = false;
             this.pictureBox55.Tag = "70,70";
-            this.pictureBox55.Click += new System.EventHandler(this.pictureBox55_Click);
+            this.pictureBox55.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox54
             // 
@@ -360,7 +365,7 @@
             this.pictureBox54.TabIndex = 53;
             this.pictureBox54.TabStop = false;
             this.pictureBox54.Tag = "70,70";
-            this.pictureBox54.Click += new System.EventHandler(this.pictureBox54_Click);
+            this.pictureBox54.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox53
             // 
@@ -370,7 +375,7 @@
             this.pictureBox53.TabIndex = 52;
             this.pictureBox53.TabStop = false;
             this.pictureBox53.Tag = "70,70";
-            this.pictureBox53.Click += new System.EventHandler(this.pictureBox53_Click);
+            this.pictureBox53.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox52
             // 
@@ -380,10 +385,11 @@
             this.pictureBox52.TabIndex = 51;
             this.pictureBox52.TabStop = false;
             this.pictureBox52.Tag = "70,70";
-            this.pictureBox52.Click += new System.EventHandler(this.pictureBox52_Click);
+            this.pictureBox52.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox51
             // 
+            this.pictureBox51.AccessibleName = "red";
             this.pictureBox51.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox51.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox51.BackgroundImage")));
             this.pictureBox51.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -393,10 +399,11 @@
             this.pictureBox51.TabIndex = 50;
             this.pictureBox51.TabStop = false;
             this.pictureBox51.Tag = "70,70";
-            this.pictureBox51.Click += new System.EventHandler(this.pictureBox51_Click);
+            this.pictureBox51.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox50
             // 
+            this.pictureBox50.AccessibleName = "red";
             this.pictureBox50.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox50.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox50.BackgroundImage")));
             this.pictureBox50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -406,7 +413,7 @@
             this.pictureBox50.TabIndex = 49;
             this.pictureBox50.TabStop = false;
             this.pictureBox50.Tag = "70,70";
-            this.pictureBox50.Click += new System.EventHandler(this.pictureBox50_Click);
+            this.pictureBox50.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox49
             // 
@@ -416,10 +423,11 @@
             this.pictureBox49.TabIndex = 48;
             this.pictureBox49.TabStop = false;
             this.pictureBox49.Tag = "70,70";
-            this.pictureBox49.Click += new System.EventHandler(this.pictureBox49_Click);
+            this.pictureBox49.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox48
             // 
+            this.pictureBox48.AccessibleName = "red";
             this.pictureBox48.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox48.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox48.BackgroundImage")));
             this.pictureBox48.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -429,10 +437,11 @@
             this.pictureBox48.TabIndex = 47;
             this.pictureBox48.TabStop = false;
             this.pictureBox48.Tag = "70,70";
-            this.pictureBox48.Click += new System.EventHandler(this.pictureBox48_Click);
+            this.pictureBox48.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox47
             // 
+            this.pictureBox47.AccessibleName = "red";
             this.pictureBox47.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox47.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox47.BackgroundImage")));
             this.pictureBox47.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -442,10 +451,11 @@
             this.pictureBox47.TabIndex = 46;
             this.pictureBox47.TabStop = false;
             this.pictureBox47.Tag = "70,70";
-            this.pictureBox47.Click += new System.EventHandler(this.pictureBox47_Click);
+            this.pictureBox47.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox46
             // 
+            this.pictureBox46.AccessibleName = "red";
             this.pictureBox46.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox46.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox46.BackgroundImage")));
             this.pictureBox46.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -455,7 +465,7 @@
             this.pictureBox46.TabIndex = 45;
             this.pictureBox46.TabStop = false;
             this.pictureBox46.Tag = "70,70";
-            this.pictureBox46.Click += new System.EventHandler(this.pictureBox46_Click);
+            this.pictureBox46.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox45
             // 
@@ -465,7 +475,7 @@
             this.pictureBox45.TabIndex = 44;
             this.pictureBox45.TabStop = false;
             this.pictureBox45.Tag = "70,70";
-            this.pictureBox45.Click += new System.EventHandler(this.pictureBox45_Click);
+            this.pictureBox45.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox44
             // 
@@ -475,10 +485,11 @@
             this.pictureBox44.TabIndex = 43;
             this.pictureBox44.TabStop = false;
             this.pictureBox44.Tag = "70,70";
-            this.pictureBox44.Click += new System.EventHandler(this.pictureBox44_Click);
+            this.pictureBox44.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox43
             // 
+            this.pictureBox43.AccessibleName = "red";
             this.pictureBox43.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox43.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox43.BackgroundImage")));
             this.pictureBox43.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -488,7 +499,7 @@
             this.pictureBox43.TabIndex = 42;
             this.pictureBox43.TabStop = false;
             this.pictureBox43.Tag = "70,70";
-            this.pictureBox43.Click += new System.EventHandler(this.pictureBox43_Click);
+            this.pictureBox43.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox42
             // 
@@ -498,7 +509,7 @@
             this.pictureBox42.TabIndex = 41;
             this.pictureBox42.TabStop = false;
             this.pictureBox42.Tag = "70,70";
-            this.pictureBox42.Click += new System.EventHandler(this.pictureBox42_Click);
+            this.pictureBox42.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox41
             // 
@@ -510,7 +521,7 @@
             this.pictureBox41.TabIndex = 40;
             this.pictureBox41.TabStop = false;
             this.pictureBox41.Tag = "70,70";
-            this.pictureBox41.Click += new System.EventHandler(this.pictureBox41_Click);
+            this.pictureBox41.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox40
             // 
@@ -522,7 +533,7 @@
             this.pictureBox40.TabIndex = 39;
             this.pictureBox40.TabStop = false;
             this.pictureBox40.Tag = "70,70";
-            this.pictureBox40.Click += new System.EventHandler(this.pictureBox40_Click);
+            this.pictureBox40.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox39
             // 
@@ -532,7 +543,7 @@
             this.pictureBox39.TabIndex = 38;
             this.pictureBox39.TabStop = false;
             this.pictureBox39.Tag = "70,70";
-            this.pictureBox39.Click += new System.EventHandler(this.pictureBox39_Click);
+            this.pictureBox39.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox38
             // 
@@ -542,7 +553,7 @@
             this.pictureBox38.TabIndex = 37;
             this.pictureBox38.TabStop = false;
             this.pictureBox38.Tag = "70,70";
-            this.pictureBox38.Click += new System.EventHandler(this.pictureBox38_Click);
+            this.pictureBox38.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox37
             // 
@@ -554,10 +565,11 @@
             this.pictureBox37.TabIndex = 36;
             this.pictureBox37.TabStop = false;
             this.pictureBox37.Tag = "70,70";
-            this.pictureBox37.Click += new System.EventHandler(this.pictureBox37_Click);
+            this.pictureBox37.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox36
             // 
+            this.pictureBox36.AccessibleName = "red";
             this.pictureBox36.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox36.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox36.BackgroundImage")));
             this.pictureBox36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -567,7 +579,7 @@
             this.pictureBox36.TabIndex = 35;
             this.pictureBox36.TabStop = false;
             this.pictureBox36.Tag = "70,70";
-            this.pictureBox36.Click += new System.EventHandler(this.pictureBox36_Click);
+            this.pictureBox36.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox35
             // 
@@ -577,7 +589,7 @@
             this.pictureBox35.TabIndex = 34;
             this.pictureBox35.TabStop = false;
             this.pictureBox35.Tag = "70,70";
-            this.pictureBox35.Click += new System.EventHandler(this.pictureBox35_Click);
+            this.pictureBox35.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox34
             // 
@@ -589,7 +601,7 @@
             this.pictureBox34.TabIndex = 33;
             this.pictureBox34.TabStop = false;
             this.pictureBox34.Tag = "70,70";
-            this.pictureBox34.Click += new System.EventHandler(this.pictureBox34_Click);
+            this.pictureBox34.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox33
             // 
@@ -599,7 +611,7 @@
             this.pictureBox33.TabIndex = 32;
             this.pictureBox33.TabStop = false;
             this.pictureBox33.Tag = "70,70";
-            this.pictureBox33.Click += new System.EventHandler(this.pictureBox33_Click);
+            this.pictureBox33.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox32
             // 
@@ -611,7 +623,7 @@
             this.pictureBox32.TabIndex = 31;
             this.pictureBox32.TabStop = false;
             this.pictureBox32.Tag = "70,70";
-            this.pictureBox32.Click += new System.EventHandler(this.pictureBox32_Click);
+            this.pictureBox32.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox31
             // 
@@ -621,7 +633,7 @@
             this.pictureBox31.TabIndex = 30;
             this.pictureBox31.TabStop = false;
             this.pictureBox31.Tag = "70,70";
-            this.pictureBox31.Click += new System.EventHandler(this.pictureBox31_Click);
+            this.pictureBox31.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox30
             // 
@@ -631,7 +643,7 @@
             this.pictureBox30.TabIndex = 29;
             this.pictureBox30.TabStop = false;
             this.pictureBox30.Tag = "70,70";
-            this.pictureBox30.Click += new System.EventHandler(this.pictureBox30_Click);
+            this.pictureBox30.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox29
             // 
@@ -643,10 +655,11 @@
             this.pictureBox29.TabIndex = 28;
             this.pictureBox29.TabStop = false;
             this.pictureBox29.Tag = "70,70";
-            this.pictureBox29.Click += new System.EventHandler(this.pictureBox29_Click);
+            this.pictureBox29.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox28
             // 
+            this.pictureBox28.AccessibleName = "blue";
             this.pictureBox28.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox28.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox28.BackgroundImage")));
             this.pictureBox28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -656,7 +669,7 @@
             this.pictureBox28.TabIndex = 27;
             this.pictureBox28.TabStop = false;
             this.pictureBox28.Tag = "70,70";
-            this.pictureBox28.Click += new System.EventHandler(this.pictureBox28_Click);
+            this.pictureBox28.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox27
             // 
@@ -666,10 +679,11 @@
             this.pictureBox27.TabIndex = 26;
             this.pictureBox27.TabStop = false;
             this.pictureBox27.Tag = "70,70";
-            this.pictureBox27.Click += new System.EventHandler(this.pictureBox27_Click);
+            this.pictureBox27.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox26
             // 
+            this.pictureBox26.AccessibleName = "blue";
             this.pictureBox26.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox26.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox26.BackgroundImage")));
             this.pictureBox26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -679,7 +693,7 @@
             this.pictureBox26.TabIndex = 25;
             this.pictureBox26.TabStop = false;
             this.pictureBox26.Tag = "70,70";
-            this.pictureBox26.Click += new System.EventHandler(this.pictureBox26_Click);
+            this.pictureBox26.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox25
             // 
@@ -689,10 +703,11 @@
             this.pictureBox25.TabIndex = 24;
             this.pictureBox25.TabStop = false;
             this.pictureBox25.Tag = "70,70";
-            this.pictureBox25.Click += new System.EventHandler(this.pictureBox25_Click);
+            this.pictureBox25.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox24
             // 
+            this.pictureBox24.AccessibleName = "blue";
             this.pictureBox24.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox24.BackgroundImage")));
             this.pictureBox24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -702,10 +717,11 @@
             this.pictureBox24.TabIndex = 23;
             this.pictureBox24.TabStop = false;
             this.pictureBox24.Tag = "70,70";
-            this.pictureBox24.Click += new System.EventHandler(this.pictureBox24_Click);
+            this.pictureBox24.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox23
             // 
+            this.pictureBox23.AccessibleName = "blue";
             this.pictureBox23.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox23.BackgroundImage")));
             this.pictureBox23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -715,7 +731,7 @@
             this.pictureBox23.TabIndex = 22;
             this.pictureBox23.TabStop = false;
             this.pictureBox23.Tag = "70,70";
-            this.pictureBox23.Click += new System.EventHandler(this.pictureBox23_Click);
+            this.pictureBox23.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox22
             // 
@@ -725,10 +741,11 @@
             this.pictureBox22.TabIndex = 21;
             this.pictureBox22.TabStop = false;
             this.pictureBox22.Tag = "70,70";
-            this.pictureBox22.Click += new System.EventHandler(this.pictureBox22_Click);
+            this.pictureBox22.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox21
             // 
+            this.pictureBox21.AccessibleName = "blue";
             this.pictureBox21.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox21.BackgroundImage")));
             this.pictureBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -738,7 +755,7 @@
             this.pictureBox21.TabIndex = 20;
             this.pictureBox21.TabStop = false;
             this.pictureBox21.Tag = "70,70";
-            this.pictureBox21.Click += new System.EventHandler(this.pictureBox21_Click);
+            this.pictureBox21.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox20
             // 
@@ -748,10 +765,11 @@
             this.pictureBox20.TabIndex = 19;
             this.pictureBox20.TabStop = false;
             this.pictureBox20.Tag = "70,70";
-            this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click);
+            this.pictureBox20.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox19
             // 
+            this.pictureBox19.AccessibleName = "blue";
             this.pictureBox19.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox19.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox19.BackgroundImage")));
             this.pictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -761,7 +779,7 @@
             this.pictureBox19.TabIndex = 18;
             this.pictureBox19.TabStop = false;
             this.pictureBox19.Tag = "70,70";
-            this.pictureBox19.Click += new System.EventHandler(this.pictureBox19_Click);
+            this.pictureBox19.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox18
             // 
@@ -771,7 +789,7 @@
             this.pictureBox18.TabIndex = 17;
             this.pictureBox18.TabStop = false;
             this.pictureBox18.Tag = "70,70";
-            this.pictureBox18.Click += new System.EventHandler(this.pictureBox18_Click);
+            this.pictureBox18.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox17
             // 
@@ -781,10 +799,11 @@
             this.pictureBox17.TabIndex = 16;
             this.pictureBox17.TabStop = false;
             this.pictureBox17.Tag = "70,70";
-            this.pictureBox17.Click += new System.EventHandler(this.pictureBox17_Click);
+            this.pictureBox17.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox16
             // 
+            this.pictureBox16.AccessibleName = "blue";
             this.pictureBox16.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox16.BackgroundImage")));
             this.pictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -794,7 +813,7 @@
             this.pictureBox16.TabIndex = 15;
             this.pictureBox16.TabStop = false;
             this.pictureBox16.Tag = "70,70";
-            this.pictureBox16.Click += new System.EventHandler(this.pictureBox16_Click);
+            this.pictureBox16.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox15
             // 
@@ -805,7 +824,7 @@
             this.pictureBox15.TabIndex = 14;
             this.pictureBox15.TabStop = false;
             this.pictureBox15.Tag = "70,70";
-            this.pictureBox15.Click += new System.EventHandler(this.pictureBox15_Click);
+            this.pictureBox15.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox14
             // 
@@ -816,7 +835,7 @@
             this.pictureBox14.TabIndex = 13;
             this.pictureBox14.TabStop = false;
             this.pictureBox14.Tag = "70,70";
-            this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
+            this.pictureBox14.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox13
             // 
@@ -826,7 +845,7 @@
             this.pictureBox13.TabIndex = 12;
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Tag = "70,70";
-            this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
+            this.pictureBox13.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox12
             // 
@@ -837,7 +856,7 @@
             this.pictureBox12.TabIndex = 11;
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Tag = "70,70";
-            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
+            this.pictureBox12.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox11
             // 
@@ -847,10 +866,11 @@
             this.pictureBox11.TabIndex = 10;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Tag = "70,70";
-            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
+            this.pictureBox11.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox10
             // 
+            this.pictureBox10.AccessibleName = "blue";
             this.pictureBox10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -860,7 +880,7 @@
             this.pictureBox10.TabIndex = 9;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Tag = "70,70";
-            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
+            this.pictureBox10.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox9
             // 
@@ -870,10 +890,11 @@
             this.pictureBox9.TabIndex = 8;
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Tag = "70,70";
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            this.pictureBox9.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox8
             // 
+            this.pictureBox8.AccessibleName = "blue";
             this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -883,7 +904,7 @@
             this.pictureBox8.TabIndex = 7;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Tag = "70,70";
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+            this.pictureBox8.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox7
             // 
@@ -893,10 +914,11 @@
             this.pictureBox7.TabIndex = 6;
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Tag = "70,70";
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            this.pictureBox7.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox6
             // 
+            this.pictureBox6.AccessibleName = "blue";
             this.pictureBox6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -906,7 +928,7 @@
             this.pictureBox6.TabIndex = 5;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Tag = "70,70";
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.pictureBox6.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox5
             // 
@@ -916,10 +938,11 @@
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Tag = "70,70";
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.pictureBox5.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox4
             // 
+            this.pictureBox4.AccessibleName = "blue";
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -929,7 +952,7 @@
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Tag = "70,70";
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.pictureBox4.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox3
             // 
@@ -939,10 +962,11 @@
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Tag = "70,70";
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox3.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox2
             // 
+            this.pictureBox2.AccessibleName = "blue";
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -952,7 +976,7 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Tag = "70,70";
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.BoxClicked);
             // 
             // pictureBox1
             // 
@@ -962,17 +986,19 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "70,70";
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.BoxClicked);
             // 
             // Form1
             // 
+            this.AccessibleName = "blue";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 527);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.boardPanel);
             this.Name = "Form1";
+            this.Tag = "70,70";
             this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
+            this.boardPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox67)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox63)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox62)).EndInit();
@@ -1073,7 +1099,7 @@
         private System.Windows.Forms.PictureBox pictureBox28;
         private System.Windows.Forms.PictureBox pictureBox29;
         private System.Windows.Forms.PictureBox pictureBox30;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel boardPanel;
         private System.Windows.Forms.PictureBox pictureBox67;
         private System.Windows.Forms.PictureBox pictureBox63;
         private System.Windows.Forms.PictureBox pictureBox62;
