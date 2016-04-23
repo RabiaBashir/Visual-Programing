@@ -86,6 +86,9 @@
     <None Include="Resources\woodSheet11.jpg" />
     <None Include="Resources\woodSheet1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\blue_wins.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
