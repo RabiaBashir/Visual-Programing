@@ -1,4 +1,4 @@
-﻿ namespace MyCheckerGame
+﻿namespace MyCheckerGame
 {
     partial class Form1
     {
@@ -38,26 +38,35 @@
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.Score = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.r1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.ScorePanel = new System.Windows.Forms.Panel();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.b3 = new System.Windows.Forms.PictureBox();
+            this.b2 = new System.Windows.Forms.PictureBox();
+            this.b1 = new System.Windows.Forms.PictureBox();
+            this.b4 = new System.Windows.Forms.PictureBox();
+            this.b6 = new System.Windows.Forms.PictureBox();
+            this.b5 = new System.Windows.Forms.PictureBox();
+            this.b7 = new System.Windows.Forms.PictureBox();
+            this.b8 = new System.Windows.Forms.PictureBox();
+            this.b9 = new System.Windows.Forms.PictureBox();
+            this.b11 = new System.Windows.Forms.PictureBox();
+            this.b10 = new System.Windows.Forms.PictureBox();
+            this.b12 = new System.Windows.Forms.PictureBox();
+            this.r3 = new System.Windows.Forms.PictureBox();
+            this.r2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.r4 = new System.Windows.Forms.PictureBox();
+            this.r5 = new System.Windows.Forms.PictureBox();
+            this.r6 = new System.Windows.Forms.PictureBox();
+            this.r7 = new System.Windows.Forms.PictureBox();
+            this.r8 = new System.Windows.Forms.PictureBox();
+            this.r9 = new System.Windows.Forms.PictureBox();
+            this.r10 = new System.Windows.Forms.PictureBox();
+            this.r11 = new System.Windows.Forms.PictureBox();
+            this.r12 = new System.Windows.Forms.PictureBox();
             this.boardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).BeginInit();
@@ -66,26 +75,35 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.ScorePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r12)).BeginInit();
             this.SuspendLayout();
             // 
             // boardPanel
@@ -212,13 +230,13 @@
             this.Score.TabIndex = 0;
             this.Score.Text = "Score Board";
             // 
-            // pictureBox2
+            // r1
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(0, 53);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.r1.Location = new System.Drawing.Point(0, 53);
+            this.r1.Name = "r1";
+            this.r1.Size = new System.Drawing.Size(50, 50);
+            this.r1.TabIndex = 1;
+            this.r1.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -231,139 +249,148 @@
             // ScorePanel
             // 
             this.ScorePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ScorePanel.BackgroundImage")));
-            this.ScorePanel.Controls.Add(this.pictureBox20);
-            this.ScorePanel.Controls.Add(this.pictureBox18);
-            this.ScorePanel.Controls.Add(this.pictureBox17);
-            this.ScorePanel.Controls.Add(this.pictureBox16);
-            this.ScorePanel.Controls.Add(this.pictureBox15);
-            this.ScorePanel.Controls.Add(this.pictureBox14);
-            this.ScorePanel.Controls.Add(this.pictureBox13);
-            this.ScorePanel.Controls.Add(this.pictureBox12);
-            this.ScorePanel.Controls.Add(this.pictureBox11);
-            this.ScorePanel.Controls.Add(this.pictureBox10);
-            this.ScorePanel.Controls.Add(this.pictureBox9);
-            this.ScorePanel.Controls.Add(this.pictureBox7);
-            this.ScorePanel.Controls.Add(this.pictureBox6);
-            this.ScorePanel.Controls.Add(this.pictureBox5);
+            this.ScorePanel.Controls.Add(this.r12);
+            this.ScorePanel.Controls.Add(this.r11);
+            this.ScorePanel.Controls.Add(this.r10);
+            this.ScorePanel.Controls.Add(this.r9);
+            this.ScorePanel.Controls.Add(this.r8);
+            this.ScorePanel.Controls.Add(this.r7);
+            this.ScorePanel.Controls.Add(this.r6);
+            this.ScorePanel.Controls.Add(this.r5);
+            this.ScorePanel.Controls.Add(this.r4);
+            this.ScorePanel.Controls.Add(this.b3);
+            this.ScorePanel.Controls.Add(this.b2);
+            this.ScorePanel.Controls.Add(this.b1);
+            this.ScorePanel.Controls.Add(this.b4);
+            this.ScorePanel.Controls.Add(this.b6);
+            this.ScorePanel.Controls.Add(this.b5);
+            this.ScorePanel.Controls.Add(this.b7);
+            this.ScorePanel.Controls.Add(this.b8);
+            this.ScorePanel.Controls.Add(this.b9);
+            this.ScorePanel.Controls.Add(this.b11);
+            this.ScorePanel.Controls.Add(this.b10);
+            this.ScorePanel.Controls.Add(this.b12);
+            this.ScorePanel.Controls.Add(this.r3);
+            this.ScorePanel.Controls.Add(this.r2);
             this.ScorePanel.Controls.Add(this.pictureBox3);
-            this.ScorePanel.Controls.Add(this.pictureBox2);
+            this.ScorePanel.Controls.Add(this.r1);
             this.ScorePanel.Controls.Add(this.Score);
             this.ScorePanel.Location = new System.Drawing.Point(751, 50);
             this.ScorePanel.Name = "ScorePanel";
-            this.ScorePanel.Size = new System.Drawing.Size(271, 464);
+            this.ScorePanel.Size = new System.Drawing.Size(271, 530);
             this.ScorePanel.TabIndex = 2;
             // 
-            // pictureBox20
+            // b3
             // 
-            this.pictureBox20.Location = new System.Drawing.Point(156, 357);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox20.TabIndex = 16;
-            this.pictureBox20.TabStop = false;
+            this.b3.Location = new System.Drawing.Point(115, 477);
+            this.b3.Name = "b3";
+            this.b3.Size = new System.Drawing.Size(50, 50);
+            this.b3.TabIndex = 16;
+            this.b3.TabStop = false;
             // 
-            // pictureBox18
+            // b2
             // 
-            this.pictureBox18.Location = new System.Drawing.Point(80, 357);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox18.TabIndex = 15;
-            this.pictureBox18.TabStop = false;
+            this.b2.Location = new System.Drawing.Point(59, 477);
+            this.b2.Name = "b2";
+            this.b2.Size = new System.Drawing.Size(50, 50);
+            this.b2.TabIndex = 15;
+            this.b2.TabStop = false;
             // 
-            // pictureBox17
+            // b1
             // 
-            this.pictureBox17.Location = new System.Drawing.Point(0, 357);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox17.TabIndex = 14;
-            this.pictureBox17.TabStop = false;
+            this.b1.Location = new System.Drawing.Point(3, 477);
+            this.b1.Name = "b1";
+            this.b1.Size = new System.Drawing.Size(50, 50);
+            this.b1.TabIndex = 14;
+            this.b1.TabStop = false;
             // 
-            // pictureBox16
+            // b4
             // 
-            this.pictureBox16.Location = new System.Drawing.Point(156, 281);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox16.TabIndex = 13;
-            this.pictureBox16.TabStop = false;
+            this.b4.Location = new System.Drawing.Point(171, 477);
+            this.b4.Name = "b4";
+            this.b4.Size = new System.Drawing.Size(50, 50);
+            this.b4.TabIndex = 13;
+            this.b4.TabStop = false;
             // 
-            // pictureBox15
+            // b6
             // 
-            this.pictureBox15.Location = new System.Drawing.Point(80, 281);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox15.TabIndex = 12;
-            this.pictureBox15.TabStop = false;
+            this.b6.Location = new System.Drawing.Point(59, 421);
+            this.b6.Name = "b6";
+            this.b6.Size = new System.Drawing.Size(50, 50);
+            this.b6.TabIndex = 12;
+            this.b6.TabStop = false;
             // 
-            // pictureBox14
+            // b5
             // 
-            this.pictureBox14.Location = new System.Drawing.Point(0, 281);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox14.TabIndex = 11;
-            this.pictureBox14.TabStop = false;
+            this.b5.Location = new System.Drawing.Point(3, 421);
+            this.b5.Name = "b5";
+            this.b5.Size = new System.Drawing.Size(50, 50);
+            this.b5.TabIndex = 11;
+            this.b5.TabStop = false;
             // 
-            // pictureBox13
+            // b7
             // 
-            this.pictureBox13.Location = new System.Drawing.Point(76, 206);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox13.TabIndex = 10;
-            this.pictureBox13.TabStop = false;
+            this.b7.Location = new System.Drawing.Point(115, 421);
+            this.b7.Name = "b7";
+            this.b7.Size = new System.Drawing.Size(50, 50);
+            this.b7.TabIndex = 10;
+            this.b7.TabStop = false;
             // 
-            // pictureBox12
+            // b8
             // 
-            this.pictureBox12.Location = new System.Drawing.Point(152, 204);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox12.TabIndex = 9;
-            this.pictureBox12.TabStop = false;
+            this.b8.Location = new System.Drawing.Point(171, 421);
+            this.b8.Name = "b8";
+            this.b8.Size = new System.Drawing.Size(50, 50);
+            this.b8.TabIndex = 9;
+            this.b8.TabStop = false;
             // 
-            // pictureBox11
+            // b9
             // 
-            this.pictureBox11.Location = new System.Drawing.Point(0, 205);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox11.TabIndex = 8;
-            this.pictureBox11.TabStop = false;
+            this.b9.Location = new System.Drawing.Point(3, 365);
+            this.b9.Name = "b9";
+            this.b9.Size = new System.Drawing.Size(50, 50);
+            this.b9.TabIndex = 8;
+            this.b9.TabStop = false;
             // 
-            // pictureBox10
+            // b11
             // 
-            this.pictureBox10.Location = new System.Drawing.Point(152, 128);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox10.TabIndex = 7;
-            this.pictureBox10.TabStop = false;
+            this.b11.Location = new System.Drawing.Point(115, 363);
+            this.b11.Name = "b11";
+            this.b11.Size = new System.Drawing.Size(50, 50);
+            this.b11.TabIndex = 7;
+            this.b11.TabStop = false;
             // 
-            // pictureBox9
+            // b10
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(76, 129);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox9.TabIndex = 6;
-            this.pictureBox9.TabStop = false;
+            this.b10.Location = new System.Drawing.Point(59, 363);
+            this.b10.Name = "b10";
+            this.b10.Size = new System.Drawing.Size(50, 50);
+            this.b10.TabIndex = 6;
+            this.b10.TabStop = false;
             // 
-            // pictureBox7
+            // b12
             // 
-            this.pictureBox7.Location = new System.Drawing.Point(0, 129);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox7.TabIndex = 5;
-            this.pictureBox7.TabStop = false;
+            this.b12.Location = new System.Drawing.Point(171, 363);
+            this.b12.Name = "b12";
+            this.b12.Size = new System.Drawing.Size(50, 50);
+            this.b12.TabIndex = 5;
+            this.b12.TabStop = false;
             // 
-            // pictureBox6
+            // r3
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(152, 53);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
+            this.r3.Location = new System.Drawing.Point(112, 52);
+            this.r3.Name = "r3";
+            this.r3.Size = new System.Drawing.Size(50, 50);
+            this.r3.TabIndex = 4;
+            this.r3.TabStop = false;
             // 
-            // pictureBox5
+            // r2
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(76, 53);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
+            this.r2.Location = new System.Drawing.Point(56, 53);
+            this.r2.Name = "r2";
+            this.r2.Size = new System.Drawing.Size(50, 50);
+            this.r2.TabIndex = 3;
+            this.r2.TabStop = false;
             // 
             // panel1
             // 
@@ -396,6 +423,78 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // r4
+            // 
+            this.r4.Location = new System.Drawing.Point(171, 53);
+            this.r4.Name = "r4";
+            this.r4.Size = new System.Drawing.Size(50, 50);
+            this.r4.TabIndex = 17;
+            this.r4.TabStop = false;
+            // 
+            // r5
+            // 
+            this.r5.Location = new System.Drawing.Point(0, 110);
+            this.r5.Name = "r5";
+            this.r5.Size = new System.Drawing.Size(50, 50);
+            this.r5.TabIndex = 18;
+            this.r5.TabStop = false;
+            // 
+            // r6
+            // 
+            this.r6.Location = new System.Drawing.Point(56, 110);
+            this.r6.Name = "r6";
+            this.r6.Size = new System.Drawing.Size(50, 50);
+            this.r6.TabIndex = 19;
+            this.r6.TabStop = false;
+            // 
+            // r7
+            // 
+            this.r7.Location = new System.Drawing.Point(112, 110);
+            this.r7.Name = "r7";
+            this.r7.Size = new System.Drawing.Size(50, 50);
+            this.r7.TabIndex = 20;
+            this.r7.TabStop = false;
+            // 
+            // r8
+            // 
+            this.r8.Location = new System.Drawing.Point(171, 109);
+            this.r8.Name = "r8";
+            this.r8.Size = new System.Drawing.Size(50, 50);
+            this.r8.TabIndex = 21;
+            this.r8.TabStop = false;
+            // 
+            // r9
+            // 
+            this.r9.Location = new System.Drawing.Point(0, 166);
+            this.r9.Name = "r9";
+            this.r9.Size = new System.Drawing.Size(50, 50);
+            this.r9.TabIndex = 22;
+            this.r9.TabStop = false;
+            // 
+            // r10
+            // 
+            this.r10.Location = new System.Drawing.Point(56, 167);
+            this.r10.Name = "r10";
+            this.r10.Size = new System.Drawing.Size(50, 50);
+            this.r10.TabIndex = 23;
+            this.r10.TabStop = false;
+            // 
+            // r11
+            // 
+            this.r11.Location = new System.Drawing.Point(112, 166);
+            this.r11.Name = "r11";
+            this.r11.Size = new System.Drawing.Size(50, 50);
+            this.r11.TabIndex = 24;
+            this.r11.TabStop = false;
+            // 
+            // r12
+            // 
+            this.r12.Location = new System.Drawing.Point(171, 165);
+            this.r12.Name = "r12";
+            this.r12.Size = new System.Drawing.Size(50, 50);
+            this.r12.TabIndex = 25;
+            this.r12.TabStop = false;
+            // 
             // Form1
             // 
             this.AccessibleName = "blue";
@@ -419,27 +518,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ScorePanel.ResumeLayout(false);
             this.ScorePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r2)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -455,26 +563,35 @@
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label Score;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox r1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel ScorePanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.PictureBox pictureBox18;
-        private System.Windows.Forms.PictureBox pictureBox17;
-        private System.Windows.Forms.PictureBox pictureBox16;
-        private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox b3;
+        private System.Windows.Forms.PictureBox b2;
+        private System.Windows.Forms.PictureBox b1;
+        private System.Windows.Forms.PictureBox b4;
+        private System.Windows.Forms.PictureBox b6;
+        private System.Windows.Forms.PictureBox b5;
+        private System.Windows.Forms.PictureBox b7;
+        private System.Windows.Forms.PictureBox b8;
+        private System.Windows.Forms.PictureBox b9;
+        private System.Windows.Forms.PictureBox b11;
+        private System.Windows.Forms.PictureBox b10;
+        private System.Windows.Forms.PictureBox b12;
+        private System.Windows.Forms.PictureBox r3;
+        private System.Windows.Forms.PictureBox r2;
+        private System.Windows.Forms.PictureBox r12;
+        private System.Windows.Forms.PictureBox r11;
+        private System.Windows.Forms.PictureBox r10;
+        private System.Windows.Forms.PictureBox r9;
+        private System.Windows.Forms.PictureBox r8;
+        private System.Windows.Forms.PictureBox r7;
+        private System.Windows.Forms.PictureBox r6;
+        private System.Windows.Forms.PictureBox r5;
+        private System.Windows.Forms.PictureBox r4;
 
 
     }

@@ -1,8 +1,4 @@
-﻿//RABIA BASHIR
-//BSE-6B
-//144
-                                                                 //Checker Game
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,90 +7,97 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MyCheckerGame;
-//Main Flow
-//Sound Player
- //All pieces(red,black) are placed on the BlackPictureBox
-//Check all pieces left and right Diagonal and make Possible Move
-//First Turn is given to Blue Piece
-//Left and Right Diagonal is shown by Grey Color
-//Two Click 1 for select and other for move or jump
+
 namespace MyCheckerGame
 {
     public partial class Form1 : Form
     {
-
-
-        //Dynamic Array for PictureBox(8 rows,4 col)
-        PictureBox[,] Board = new PictureBox[8, 8]; //8 row and 4 col
-        PictureBox FirstClickBox; //when click on any box it is saved in it
-        PictureBox leftDiagonaldown, rightDiagonaldown; //leftDiagonalBox and RightDiagonalBox for pieces
-        PictureBox leftDiagonalup, rightDiagonalup;
+        PictureBox[,] Board = new PictureBox[8, 8];
+        PictureBox FirstClickBox;
+        PictureBox leftDiagnoldown, rightDiagnoldown;
+        PictureBox leftDiagnolup, rightDiagnolup;
         PictureBox leftJumpBoxdown, rightJumpBoxdown;
         PictureBox leftJumpBoxup, rightJumpBoxup;
-
-
-
         String Turn;
-        int Click;
+        int click;
 
         public Form1()
         {
             InitializeComponent();
             CreateBoad();
-
-            boardPanel.SendToBack(); //send panel to back end and create a board on it.
+            boardPanel.SendToBack();
             SetPieces();
+            Turn = "blue";
+            click = 0;
 
-
-            Turn = "blue"; //First turn is given to Blue piece
-            Click = 0;
-
-
-            leftDiagonaldown = null;
-            rightDiagonaldown = null;
-            leftDiagonalup = null;
-            rightDiagonalup = null;
-            leftJumpBoxdown = null;
-            rightJumpBoxdown = null;
+            leftDiagnoldown = null;
+            rightDiagnoldown = null;
+            leftDiagnolup = null;
+            rightDiagnolup = null;
             leftJumpBoxup = null;
             rightJumpBoxup = null;
+            leftJumpBoxdown = null;
+            rightJumpBoxdown = null;
 
         }
 
+        private void BoxClicked(object sender, EventArgs e)
+        {
+            PictureBox clickedBox = (PictureBox)sender;
+            if (Turn == "blue") //clickedBox.AccessibleName=="blue" 
+            {
+                if (clickedBox.AccessibleName == "red")
+                {
+                    /// clicked wrong piece
+                }
+                else
+                {
+                    TurnBlue(clickedBox);
+                }
+
+            }
+            else if (Turn == "red")
+            {
+                if (clickedBox.AccessibleName == "blue")
+                {
+                    /// clicked wrong piece
+                }
+                else
+                {
+                    TurnRed(clickedBox);
+                }
+            }
+
+        }
         private void CreateBoad()
         {
-
-            //x-cordinate or starting location along x-axis
             int x = 20;
-            //y-cordinate or starting location along y-axis
             int y = 20;
-            //loop for rows
             int j = 0;
             for (int i = 0; i < 8; i++)
             {
                 j = 0;
-                if (i % 2 == 0) //if even no of row
+                if (i % 2 == 0) //if Even
                 {
-                    x = 20 + 70; //add starting location ie 20 to picturebox size i.e 70
+                    x = 20 + 70;
                     j = j + 1;
                 }
                 else
                 {
-                    x = 20; //to get odd no of rows
+                    x = 20;
                 }
                 while (j < 8)
                 {
-                    //loop for  Col
-
                     Board[i, j] = new PictureBox();
                     Board[i, j].Location = new Point(x, y);
                     Board[i, j].Size = new Size(70, 70);
+                    Board[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
                     Board[i, j].BackColor = Color.Black;
+
                     Board[i, j].AccessibleName = "none";
                     Board[i, j].BackgroundImageLayout = ImageLayout.Stretch;
-                    Board[i, j].Tag = i.ToString() + j.ToString(); //naming the Tag according to row and col(to get row no and col no)
-                    Board[i, j].Click += new EventHandler(BoxClicked); //Create a click event(Event Handler)
+                    Board[i, j].Tag = i.ToString() + j.ToString(); // naming tag according to row and col
+                    Board[i, j].Click += new EventHandler(BoxClicked);// Create a click event
                     this.Controls.Add(Board[i, j]);
                     x += 140;
                     j = j + 2;
@@ -102,271 +105,313 @@ namespace MyCheckerGame
                 y += 70;
             }
         }
-    
+
 
         private void SetPieces()
         {
             int j = 0;
-            for (int i = 0; i < 8; i++) //loop for row
+            for (int i = 0; i < 8; i++)
             {
                 j = 0;
-                if (i % 2 == 0)// if even
+                if (i % 2 == 0) //if Even
                 {
                     j = j + 1;
                 }
                 while (j < 8)
-
-                    if (i == 0 || i == 1 || i == 2) //set blue pieces in row 1,2,3
+                {
+                    if (i == 0 || i == 1 || i == 2) // set blue pieces in row 1 2 3
                     {
                         Board[i, j].BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
                         Board[i, j].AccessibleName = "blue";
+
                     }
-                if (i == 5 || i == 6 || i == 7) //set red pieces in row 6,7,8
-                {
-                    Board[i, j].BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
-                    Board[i, j].AccessibleName = "red";
+                    else if (i == 5 || i == 6 || i == 7) // set red pieces in row 6,7,8
+                    {
+                        Board[i, j].BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
+                        Board[i, j].AccessibleName = "red";
+                    }
+                    j = j + 2;
                 }
-                j = j + 2;
             }
         }
 
-        private void BoxClicked(object sender, EventArgs e)
-        {
-            PictureBox clickedBox = (PictureBox)sender; //type casting to convert sender into picture box and save in clickedBox
-            if (Turn == "blue") //clickedBox AccessibleName=="blue"
-            {
-                if (clickedBox.AccessibleName == "red")
-                {
-                    //clicked on wrong piece
-                }
-                else
-                {
-                    TurnBlue(clickedBox);
-                }
-            }
-            else if (Turn == "red")
-            {
-                if (clickedBox.AccessibleName == "blue")
-                {
-                    //clicked on wrong piece
-                }
-                else
-                {
-                    // TurnRed(clickedBox);
-                }
-
-            }
-        }
-
-    
-
-
-
-
+        //For Blue leftdowndiagonal(leftJumpBoxdown) and rightdowndiagonal(rightJumpBoxdown)
         private void TurnBlue(PictureBox clickedBox)
+        {
+
+            int row, col;
+            string location = clickedBox.Tag.ToString();
+            row = Convert.ToInt32(location[0]) - 48;
+            col = Convert.ToInt32(location[1]) - 48;
+            if (click == 0 && clickedBox.AccessibleName == "blue") //simple blue
+            {
+
+                FirstClickBox = Board[row, col];
+
+                if ((row + 1 < 8) && (col - 1 >= 0)) //left down diagnol possible
+                {
+                    if (Board[row + 1, col - 1].AccessibleName == "none") //simple left move
+                    {
+                        leftDiagnoldown = Board[row + 1, col - 1];
+                    }
+                    else if (Board[row + 1, col - 1].AccessibleName == "red" || Board[row + 1, col - 1].AccessibleName == "redKing")// if red on diagnol
+                    {
+                        if ((row + 2 < 8) && (col - 2 >= 0)) //left down jump diagnol possible
+                        {
+                            if (Board[row + 2, col - 2].AccessibleName == "none")
+                            {
+                                leftJumpBoxdown = Board[row + 1, col - 1];
+                                leftDiagnoldown = Board[row + 2, col - 2];
+                            }
+                        }
+                    }
+                    else //no leftJumpBoxdown and no leftDiagonaldown exist
+                    {
+                        leftJumpBoxdown = null;
+                        leftDiagnoldown = null;
+                    }
+                }
+                if ((row + 1 < 8) && (col + 1 < 8)) //right down diagnol possible
+                {
+                    if (Board[row + 1, col + 1].AccessibleName == "none") //simple right move
+                    {
+                        rightDiagnoldown = Board[row + 1, col + 1];
+                    }
+                    else if (Board[row + 1, col + 1].AccessibleName == "red" || Board[row + 1, col + 1].AccessibleName == "redKing")// if red on diagnol
+                    {
+                        if ((row + 2 < 8) && (col + 2 < 8)) //left down jump diagnol possible
+                        {
+                            if (Board[row + 2, col + 2].AccessibleName == "none")
+                            {
+                                rightJumpBoxdown = Board[row + 1, col + 1];
+                                rightDiagnoldown = Board[row + 2, col + 2];
+                            }
+                        }
+                    }
+                    else //no rightJumpBoxdown and no rightDiagonaldown exist
+                    {
+                        rightJumpBoxdown = null;
+                        rightDiagnoldown = null;
+                    }
+                }
+                //3 boxes shoulD be Gray
+                //1.The Box on which we click i.e our FirstClickBox
+                //2.The leftdiagonaldown
+                //3.The rightDiagonaldown
+                FirstClickBox.BackColor = Color.Gray;
+                if (leftDiagnoldown != null)
+                    leftDiagnoldown.BackColor = Color.Gray;
+                if (rightDiagnoldown != null)
+                    rightDiagnoldown.BackColor = Color.Gray;
+                click = 1;
+            }
+
+            else if (click == 1) // second click
+            {
+                // check if clicked on diagnols
+                if (clickedBox == leftDiagnoldown || clickedBox == leftDiagnolup || clickedBox == rightDiagnoldown || clickedBox == rightDiagnolup)
+                {
+
+                    if (row == 7) //when blue piece reaches to last row i.e 7
+                    {
+                        clickedBox.BackgroundImage = MyCheckerGame.Properties.Resources.blue_king_piece; //blue piece become blueKing Piece
+                        clickedBox.AccessibleName = "blueKing";
+                    }
+                    else //when row 0...6 the FirstClickBox AccessibleName and Background image shift  or save on the box we clicked i.e clickedBox
+                    {
+                        clickedBox.AccessibleName = FirstClickBox.AccessibleName;
+                        clickedBox.BackgroundImage = FirstClickBox.BackgroundImage;
+                    }
+
+                    clickedBox.BackColor = Color.Gray;
+
+                    ///Clear First click
+                    FirstClickBox.BackgroundImage = null; // rest pic
+                    FirstClickBox.AccessibleName = "none";
+                    FirstClickBox.BackColor = Color.Black;
+
+                    ///reset diagnol colors to black
+                    if (leftDiagnoldown != null)
+                        leftDiagnoldown.BackColor = Color.Black;
+                    if (leftDiagnolup != null)
+                        leftDiagnolup.BackColor = Color.Black;
+                    if (rightDiagnoldown != null)
+                        rightDiagnoldown.BackColor = Color.Black;
+                    if (rightDiagnolup != null)
+                        rightDiagnolup.BackColor = Color.Black;
+
+
+                    click = 0;
+                    Turn = "red";
+
+                    //reset to null 
+                    leftDiagnoldown = null;
+                    rightDiagnoldown = null;
+                    leftDiagnolup = null;
+                    rightDiagnolup = null;
+
+                }
+                else // if click on other boxes exept diagnols //reset
+                {
+                    FirstClickBox.BackColor = Color.Black;
+                    if (leftDiagnoldown != null)
+                        leftDiagnoldown.BackColor = Color.Black;
+                    if (leftDiagnolup != null)
+                        leftDiagnolup.BackColor = Color.Black;
+                    if (rightDiagnoldown != null)
+                        rightDiagnoldown.BackColor = Color.Black;
+                    if (rightDiagnolup != null)
+                        rightDiagnolup.BackColor = Color.Black;
+
+                    leftDiagnoldown = null;
+                    rightDiagnoldown = null;
+                    leftDiagnolup = null;
+                    rightDiagnolup = null;
+
+
+                    click = 0;
+                }
+            }
+        }
+        //For red check left up diagonal(leftJumpBoxup) and right up diagonal (rightJumpBoxup)
+        private void TurnRed(PictureBox clickedBox)
         {
             int row, col;
             string location = clickedBox.Tag.ToString();
 
-            row = Convert.ToInt32(location[0]) - 48; //to get  row no instead of its assci value and convert to integer
-            col = Convert.ToInt32(location[1]) - 48; //to get  col no instaed of its assci value and convert to integer
+            row = Convert.ToInt32(location[0]) - 48;
+            col = Convert.ToInt32(location[1]) - 48;
 
-            //For 1st Click as 1st Turn is given to Blue
-            if (Click == 0 && clickedBox.AccessibleName == "blue")   //For simple blue piece
+            if (click == 0 && clickedBox.AccessibleName == "red") //for simple red piece
             {
-
-                FirstClickBox = Board[row, col]; //when 1st click on ony box its row,col saved in FirstClickBox
-
-                if ((row + 1 < 8) && (col - 1 >= 0)) //left down diagonal possible
+                if ((row - 1 >= 0) && (col - 1 >= 0)) //left diagonal up is possible
                 {
-                    if (Board[row + 1, col - 1].AccessibleName == "none") //simple left move
+                    if (Board[row - 1, col - 1].AccessibleName == "none") //when accessiblename is none just simple move
                     {
-                        leftDiagonaldown = Board[row + 1, col - 1];
+                        leftDiagnolup = Board[row - 1, col - 1];
                     }
-                    else if (Board[row + 1, col - 1].AccessibleName == "red" || Board[row + 1, col - 1].AccessibleName == "redKing") //if red on diagonal
+                    else if (Board[row - 1, col - 1].AccessibleName == "blue" || Board[row - 1, col - 1].AccessibleName == "blueKing") //when accessiblename is blue and blueKing
                     {
-                        if ((row + 2 < 8) && (col - 2 >= 0)) //left down jump diagonal possible
-                        {
-                            if (Board[row + 2, col - 2].AccessibleName == "none")
-                            {
-                                leftJumpBoxdown = Board[row + 1, col - 1];
-                                leftDiagonaldown = Board[row + 2, col - 2];
-                            }
-                        }
-                    }
-                    else
-                    { //when no leftdiagonaldown and no rightdiagonaldown
-                        leftJumpBoxdown = null;
-                        leftDiagonaldown = null;
-                    }
-                }
-
-                if ((row + 1 < 8) && (col + 1 < 8)) // right down diagnol possible
-                {
-                    if (Board[row + 1, col + 1].AccessibleName == "none") //simple right move
-                    {
-                        rightDiagonaldown = Board[row + 1, col + 1];
-                    }
-                    else if (Board[row + 1, col + 1].AccessibleName == "red" || Board[row + 1, col + 1].AccessibleName == "redKing") //if red on diagonal
-                    {
-                        if ((row + 2 < 8) && (col + 2 < 8)) //left down jump diagonal possible
-                        {
-                            if (Board[row + 2, col + 2].AccessibleName == "none")
-                            {
-                                rightJumpBoxdown = Board[row + 1, col + 1];
-                                rightDiagonaldown = Board[row + 2, col + 2];
-                            }
-                        }
-                    }
-                    else  // when no rightJumpBoxdown or rightDiagonaldown exist
-                    {
-                        rightJumpBoxdown = null;
-                        rightDiagonaldown = null;
-                    }
-                }
-
-                FirstClickBox.BackColor = Color.Gray;
-                if (leftDiagonaldown != null)
-                    leftDiagonaldown.BackColor = Color.Gray;
-                if (rightDiagonaldown != null)
-                    rightDiagonaldown.BackColor = Color.Gray;
-
-                Click = 1;
-            }
-            else if (Click == 0 && clickedBox.AccessibleName == "blueKing") //for blue King
-            {
-                FirstClickBox = Board[row, col];
-
-                if ((row - 1 >= 0) && (col - 1 >= 0)) //leftup diagonal possible
-                {
-                    if (Board[row - 1, col - 1].AccessibleName == "none") //When AccessibleName is none
-                    {
-                        leftDiagonalup = Board[row - 1, col - 1];
-                    }
-                    else if (Board[row - 1, col - 1].AccessibleName == "red" || Board[row - 1, col - 1].AccessibleName == "redKing")
-                    {
-                        if ((row - 2 >= 0) && (col - 2 >= 0))
+                        if ((row - 2 >= 0) && (col - 2 >= 0)) // left jump Box up diagonal is possible
                         {
                             if (Board[row - 2, col - 2].AccessibleName == "none")
                             {
                                 leftJumpBoxup = Board[row - 1, col - 1];
-                                leftDiagonalup = Board[row - 2, col - 2];
+                                leftDiagnolup = Board[row - 2, col - 2];
                             }
                         }
                     }
-                    else // when no leftJumpBoxup or no leftDiagonalup exist
+                    else //when no leftJumpBoxup and leftDiagonalup exists or not possible both
                     {
                         leftJumpBoxup = null;
-                        leftDiagonalup = null;
+                        leftDiagnolup = null;
                     }
                 }
-                if ((row + 1 < 8) && (col - 1 >= 0)) //leftdowndiagonal is possible
+                if ((row - 1 >= 0) && (col + 1 < 8))  // right diagonal up is possible
                 {
-                    if (Board[row + 1, col - 1].AccessibleName == "none") //when accessiblename is none
+                    if (Board[row - 1, col + 1].AccessibleName == "none") //When accessiblename is none just simple move
                     {
-                        leftDiagonaldown = Board[row + 1, col - 1];
+                        rightDiagnolup = Board[row - 1, col + 1];
                     }
-                    else if (Board[row + 1, col - 1].AccessibleName == "red" || Board[row + 1, col - 1].AccessibleName == "redKing")
+                    else if (Board[row - 1, col + 1].AccessibleName == "blue" || Board[row - 1, col + 1].AccessibleName == "blueKing") //when accessible name is blue and blueKing
                     {
-                        if ((row + 2 < 8) && (col - 2 >= 0))
-                        {
-                            if (Board[row + 2, col - 2].AccessibleName == "none")
-                            {
-                                leftJumpBoxdown = Board[row + 1, col - 1];
-                                leftDiagonaldown = Board[row + 2, col - 2];
-                            }
-                        }
-                    }
-                    else //when no leftJumpBoxdown or no leftDiagonaldown
-                    {
-                        leftJumpBoxdown = null;
-                        leftDiagonaldown = null;
-                    }
-                }
-                if ((row - 1 >= 0) && (col + 1 < 8)) //rightup diagonal possible
-                {
-                    if (Board[row - 1, col + 1].AccessibleName == "none")
-                    {
-                        rightDiagonalup = Board[row - 1, col + 1];
-                    }
-                    else if (Board[row - 1, col + 1].AccessibleName == "red" || Board[row - 1, col + 1].AccessibleName == "redKing")
-                    {
-                        if ((row - 2 >= 0) && (col + 2 < 8))
+                        if ((row - 2 >= 0) && (col + 2 < 8)) //right JumpBox up diagonal is possible
                         {
                             if (Board[row - 2, col + 2].AccessibleName == "none")
                             {
                                 rightJumpBoxup = Board[row - 1, col + 1];
-                                rightDiagonalup = Board[row - 2, col + 2];
-
+                                rightDiagnolup = Board[row - 2, col + 2];
                             }
                         }
                     }
-                    else
+                    else //when no rightJumpBoxup and rightDiagonalup exist or not possible both
                     {
-                        rightJumpBoxup = null;
-                        rightDiagonalup = null;
+                        rightJumpBoxup = Board[row - 1, col + 1];
+                        rightDiagnolup = Board[row - 2, col + 2];
                     }
                 }
-                if ((row + 1 < 8) && (col + 1 < 8)) //rightdowndiagonal possible
-                {
-                    if (Board[row + 1, col + 1].AccessibleName == "none")
-                    {
-                        rightDiagonaldown = Board[row + 1, col + 1];
-                    }
-                    else if (Board[row + 1, col + 1].AccessibleName == "red" || Board[row + 1, col + 1].AccessibleName == "redKing")
-                    {
-                        if ((row + 2 < 8) && (col + 2 < 8))
-                        {
-                            if (Board[row + 2, col + 2].AccessibleName == "none")
-                            {
-                                rightJumpBoxdown = Board[row + 1, col + 1];
-                                rightDiagonaldown = Board[row + 2, col + 2];
-                            }
-                        }
-                    }
-                    else
-                    {
-                        rightJumpBoxdown = null;
-                        rightDiagonaldown = null;
-                    }
-                }
+                //3 boxes shoulD be Gray
+                //1.The Box on which we click i.e our FirstClickBox
+                //2.The leftdiagonalup
+                //3.The rightDiagonalup
                 FirstClickBox.BackColor = Color.Gray;
-                if (leftDiagonaldown != null)
-                    leftDiagonaldown.BackColor = Color.Gray;
-                if (rightDiagonaldown != null)
-                    rightDiagonaldown.BackColor = Color.Gray;
-                if (leftDiagonalup != null)
-                    leftDiagonalup.BackColor = Color.Gray;
-                if (rightDiagonalup != null)
-                    rightDiagonalup.BackColor = Color.Gray;
-                Click = 1;
-            }
+                if (leftDiagnolup != null)
+                    leftDiagnolup.BackColor = Color.Gray;
 
-            else if (Click == 1) //second click
+                if (rightDiagnolup != null)
+                    rightDiagnolup.BackColor = Color.Gray;
+                click = 1;
+            }
+            else if (click == 1) //for second click to move
             {
-                //check if clicked on diagonals
-                if (clickedBox == leftDiagonaldown || clickedBox == leftDiagonalup || clickedBox == rightDiagonaldown || clickedBox == rightDiagonalup)
+                // check if clicked on diagnols
+                if (clickedBox == leftDiagnoldown || clickedBox == leftDiagnolup || clickedBox == rightDiagnoldown || clickedBox == rightDiagnolup)
                 {
+
+                    if (row == 0) //when blue piece reaches to row 0
+                    {
+                        clickedBox.BackgroundImage = MyCheckerGame.Properties.Resources.red_king_piece; //blue piece become blueKing Piece
+                        clickedBox.AccessibleName = "blueKing";
+                    }
+                    else //when row 1..7 the FirstClickBox AccessibleName and Background image shift  or save on the box we clicked i.e clickedBox
+                    {
+                        clickedBox.AccessibleName = FirstClickBox.AccessibleName;
+                        clickedBox.BackgroundImage = FirstClickBox.BackgroundImage;
+                    }
+
                     clickedBox.BackColor = Color.Gray;
+
+                    ///Clear First click
+                    FirstClickBox.BackgroundImage = null; // rest pic
+                    FirstClickBox.AccessibleName = "none";
+                    FirstClickBox.BackColor = Color.Black;
+
+                    ///reset diagnol colors to black
+                    if (leftDiagnoldown != null)
+                        leftDiagnoldown.BackColor = Color.Black;
+                    if (leftDiagnolup != null)
+                        leftDiagnolup.BackColor = Color.Black;
+                    if (rightDiagnoldown != null)
+                        rightDiagnoldown.BackColor = Color.Black;
+                    if (rightDiagnolup != null)
+                        rightDiagnolup.BackColor = Color.Black;
+
+
+                    click = 0;
+                    Turn = "blue";
+
+                    //reset to null 
+                    leftDiagnoldown = null;
+                    rightDiagnoldown = null;
+                    leftDiagnolup = null;
+                    rightDiagnolup = null;
+
+                }
+                else // if click on other boxes exept diagnols //reset
+                {
+                    FirstClickBox.BackColor = Color.Black;
+                    if (leftDiagnoldown != null)
+                        leftDiagnoldown.BackColor = Color.Black;
+                    if (leftDiagnolup != null)
+                        leftDiagnolup.BackColor = Color.Black;
+                    if (rightDiagnoldown != null)
+                        rightDiagnoldown.BackColor = Color.Black;
+                    if (rightDiagnolup != null)
+                        rightDiagnolup.BackColor = Color.Black;
+
+                    leftDiagnoldown = null;
+                    rightDiagnoldown = null;
+                    leftDiagnolup = null;
+                    rightDiagnolup = null;
+
+
+                    click = 0;
                 }
             }
+
         }
     }
 }
-        
-    
-
-    
-
-
-
-
-        
-
-
-
-        
-    
 
 
 
@@ -374,30 +419,7 @@ namespace MyCheckerGame
 
 
 
-            
-      
-       
-
- 
-        
 
 
 
-        
 
-
-                         
-                
-                
-
-                
-            
-        
-        
-        
-        
-
-                
-         
-
-        
