@@ -41,7 +41,7 @@
             this.r1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.ScorePanel = new System.Windows.Forms.Panel();
-            this.redPanel = new System.Windows.Forms.Panel();
+            this.redscore = new System.Windows.Forms.Panel();
             this.b1 = new System.Windows.Forms.PictureBox();
             this.b2 = new System.Windows.Forms.PictureBox();
             this.b12 = new System.Windows.Forms.PictureBox();
@@ -54,7 +54,7 @@
             this.b4 = new System.Windows.Forms.PictureBox();
             this.b5 = new System.Windows.Forms.PictureBox();
             this.b3 = new System.Windows.Forms.PictureBox();
-            this.bluePanel = new System.Windows.Forms.Panel();
+            this.bluescore = new System.Windows.Forms.Panel();
             this.r12 = new System.Windows.Forms.PictureBox();
             this.r2 = new System.Windows.Forms.PictureBox();
             this.r11 = new System.Windows.Forms.PictureBox();
@@ -84,7 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.r1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.ScorePanel.SuspendLayout();
-            this.redPanel.SuspendLayout();
+            this.redscore.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.b1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b12)).BeginInit();
@@ -97,7 +97,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.b4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b3)).BeginInit();
-            this.bluePanel.SuspendLayout();
+            this.bluescore.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.r12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.r2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.r11)).BeginInit();
@@ -258,8 +258,8 @@
             // ScorePanel
             // 
             this.ScorePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ScorePanel.BackgroundImage")));
-            this.ScorePanel.Controls.Add(this.redPanel);
-            this.ScorePanel.Controls.Add(this.bluePanel);
+            this.ScorePanel.Controls.Add(this.redscore);
+            this.ScorePanel.Controls.Add(this.bluescore);
             this.ScorePanel.Controls.Add(this.pictureBox3);
             this.ScorePanel.Controls.Add(this.Score);
             this.ScorePanel.Location = new System.Drawing.Point(751, 50);
@@ -267,25 +267,25 @@
             this.ScorePanel.Size = new System.Drawing.Size(271, 530);
             this.ScorePanel.TabIndex = 2;
             // 
-            // redPanel
+            // redscore
             // 
-            this.redPanel.BackColor = System.Drawing.Color.White;
-            this.redPanel.Controls.Add(this.b1);
-            this.redPanel.Controls.Add(this.b2);
-            this.redPanel.Controls.Add(this.b12);
-            this.redPanel.Controls.Add(this.b11);
-            this.redPanel.Controls.Add(this.b9);
-            this.redPanel.Controls.Add(this.b10);
-            this.redPanel.Controls.Add(this.b8);
-            this.redPanel.Controls.Add(this.b7);
-            this.redPanel.Controls.Add(this.b6);
-            this.redPanel.Controls.Add(this.b4);
-            this.redPanel.Controls.Add(this.b5);
-            this.redPanel.Controls.Add(this.b3);
-            this.redPanel.Location = new System.Drawing.Point(6, 342);
-            this.redPanel.Name = "redPanel";
-            this.redPanel.Size = new System.Drawing.Size(227, 185);
-            this.redPanel.TabIndex = 27;
+            this.redscore.BackColor = System.Drawing.Color.White;
+            this.redscore.Controls.Add(this.b1);
+            this.redscore.Controls.Add(this.b2);
+            this.redscore.Controls.Add(this.b12);
+            this.redscore.Controls.Add(this.b11);
+            this.redscore.Controls.Add(this.b9);
+            this.redscore.Controls.Add(this.b10);
+            this.redscore.Controls.Add(this.b8);
+            this.redscore.Controls.Add(this.b7);
+            this.redscore.Controls.Add(this.b6);
+            this.redscore.Controls.Add(this.b4);
+            this.redscore.Controls.Add(this.b5);
+            this.redscore.Controls.Add(this.b3);
+            this.redscore.Location = new System.Drawing.Point(6, 328);
+            this.redscore.Name = "redscore";
+            this.redscore.Size = new System.Drawing.Size(227, 199);
+            this.redscore.TabIndex = 27;
             // 
             // b1
             // 
@@ -395,25 +395,25 @@
             this.b3.TabIndex = 16;
             this.b3.TabStop = false;
             // 
-            // bluePanel
+            // bluescore
             // 
-            this.bluePanel.BackColor = System.Drawing.Color.White;
-            this.bluePanel.Controls.Add(this.r1);
-            this.bluePanel.Controls.Add(this.r12);
-            this.bluePanel.Controls.Add(this.r2);
-            this.bluePanel.Controls.Add(this.r11);
-            this.bluePanel.Controls.Add(this.r3);
-            this.bluePanel.Controls.Add(this.r10);
-            this.bluePanel.Controls.Add(this.r4);
-            this.bluePanel.Controls.Add(this.r9);
-            this.bluePanel.Controls.Add(this.r5);
-            this.bluePanel.Controls.Add(this.r8);
-            this.bluePanel.Controls.Add(this.r6);
-            this.bluePanel.Controls.Add(this.r7);
-            this.bluePanel.Location = new System.Drawing.Point(3, 42);
-            this.bluePanel.Name = "bluePanel";
-            this.bluePanel.Size = new System.Drawing.Size(230, 171);
-            this.bluePanel.TabIndex = 26;
+            this.bluescore.BackColor = System.Drawing.Color.White;
+            this.bluescore.Controls.Add(this.r1);
+            this.bluescore.Controls.Add(this.r12);
+            this.bluescore.Controls.Add(this.r2);
+            this.bluescore.Controls.Add(this.r11);
+            this.bluescore.Controls.Add(this.r3);
+            this.bluescore.Controls.Add(this.r10);
+            this.bluescore.Controls.Add(this.r4);
+            this.bluescore.Controls.Add(this.r9);
+            this.bluescore.Controls.Add(this.r5);
+            this.bluescore.Controls.Add(this.r8);
+            this.bluescore.Controls.Add(this.r6);
+            this.bluescore.Controls.Add(this.r7);
+            this.bluescore.Location = new System.Drawing.Point(3, 42);
+            this.bluescore.Name = "bluescore";
+            this.bluescore.Size = new System.Drawing.Size(230, 171);
+            this.bluescore.TabIndex = 26;
             // 
             // r12
             // 
@@ -618,7 +618,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ScorePanel.ResumeLayout(false);
             this.ScorePanel.PerformLayout();
-            this.redPanel.ResumeLayout(false);
+            this.redscore.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.b1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b12)).EndInit();
@@ -631,7 +631,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.b4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b3)).EndInit();
-            this.bluePanel.ResumeLayout(false);
+            this.bluescore.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.r12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.r2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.r11)).EndInit();
@@ -691,8 +691,8 @@
         private System.Windows.Forms.PictureBox r6;
         private System.Windows.Forms.PictureBox r5;
         private System.Windows.Forms.PictureBox r4;
-        private System.Windows.Forms.Panel bluePanel;
-        private System.Windows.Forms.Panel redPanel;
+        private System.Windows.Forms.Panel bluescore;
+        private System.Windows.Forms.Panel redscore;
         private System.Windows.Forms.Label Blue;
         private System.Windows.Forms.Label Red;
         private System.Windows.Forms.Label label2;
