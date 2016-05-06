@@ -183,8 +183,9 @@ namespace MyCheckerGame
                             {
                                 leftjumpboxdown = Board[row + 1, col - 1];
                                 leftdiagnoldown = Board[row + 2, col - 2];
-                              //  leftjumpboxdown.BackgroundImage = null;
-                              //  leftjumpboxdown.AccessibleName = "none";
+                                //leftjumpboxdown.BackgroundImage = null;
+                               // leftjumpboxdown.AccessibleName = "none";
+                                //leftdiagnoldown.BackColor = Color.Black;
                             }
                         }
                     }
@@ -203,12 +204,15 @@ namespace MyCheckerGame
                     }
                     else if (Board[row + 1, col + 1].AccessibleName == "red" || Board[row + 1, col + 1].AccessibleName == "redking")
                     {
-                        if ((row + 2 < 8) && (col + 1 < 8))
+                        if ((row + 2 < 8) && (col + 2 < 8))
                         {
                             if (Board[row + 2, col + 2].AccessibleName == "none")
                             {
                                 rightjumpboxdown = Board[row + 1, col + 1];
                                 rightdiagnoldown = Board[row + 2, col + 2];
+                                //rightjumpboxdown.BackColor = Color.Black;
+                                //rightjumpboxdown.AccessibleName = "none";
+                                //rightjumpboxdown.BackgroundImage = null;
                             }
                         }
                     }
@@ -218,7 +222,7 @@ namespace MyCheckerGame
                         rightdiagnoldown = null;
                     }
                 }
-                
+
                 //3 boxes should be Gray
                 //1.The Box on which we click i.e our Firstclickbox
                 //2.The leftdiagonaldown
@@ -246,9 +250,9 @@ namespace MyCheckerGame
                         clickedBox.BackgroundImage = Firstclickbox.BackgroundImage;
                         clickedBox.AccessibleName = Firstclickbox.AccessibleName;
                     }
-                  
+
                     clickedBox.BackColor = Color.Gray;
-                    
+
                     //Clear First click
                     Firstclickbox.BackgroundImage = null; // rest pic
                     Firstclickbox.AccessibleName = "none";
@@ -323,6 +327,9 @@ namespace MyCheckerGame
                             {
                                 leftjumpboxup = Board[row - 1, col - 1];
                                 leftdiagnolup = Board[row - 2, col - 2];
+                                // leftjumpboxup.BackColor = Color.Black;
+                                // leftjumpboxup.AccessibleName = "none";
+                                //leftjumpboxup.BackgroundImage = null;
                             }
                         }
                     }
@@ -346,6 +353,9 @@ namespace MyCheckerGame
                             {
                                 rightjumpboxup = Board[row - 1, col + 1];
                                 rightdiagnolup = Board[row - 2, col + 2];
+                                //rightjumpboxup.BackColor = Color.Black;
+                                //rightjumpboxup.AccessibleName = "none";
+                                //rightjumpboxup.BackColor = Color.Black;
                             }
                         }
                     }
@@ -355,19 +365,20 @@ namespace MyCheckerGame
                         rightdiagnolup = null;
                     }
                 }
-                //3 boxes should be Gray
-                //1.The Box on which we click i.e our FirstClickBox
-                //2.The leftdiagonalup
-                //3.The rightDiagonalup
-                Firstclickbox.BackColor = Color.Gray;
-                if (leftdiagnolup != null)
-                    leftdiagnolup.BackColor = Color.Gray;
+               
+                    //3 boxes should be Gray
+                    //1.The Box on which we click i.e our FirstClickBox
+                    //2.The leftdiagonalup
+                    //3.The rightDiagonalup
+                    Firstclickbox.BackColor = Color.Gray;
+                    if (leftdiagnolup != null)
+                        leftdiagnolup.BackColor = Color.Gray;
 
-                if (rightdiagnolup != null)
-                    rightdiagnolup.BackColor = Color.Gray;
-                click = 1;
-            }
-
+                    if (rightdiagnolup != null)
+                        rightdiagnolup.BackColor = Color.Gray;
+                    click = 1;
+                }
+            
             else if (click == 1) //for second click to move
             {
                 // check if clicked on diagnols
@@ -434,12 +445,13 @@ namespace MyCheckerGame
                 }
             }
 
+            }
+
         }
-       
     }
 
-    
-        }
+
+        
         
     
 
