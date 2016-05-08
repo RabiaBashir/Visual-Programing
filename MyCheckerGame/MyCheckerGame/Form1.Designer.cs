@@ -600,9 +600,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1073, 603);
+            this.Controls.Add(this.boardpanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ScorePanel);
-            this.Controls.Add(this.boardpanel);
             this.Name = "Form1";
             this.Tag = "";
             this.Text = "Checker Game";

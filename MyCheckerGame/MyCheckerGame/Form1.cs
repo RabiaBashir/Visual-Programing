@@ -169,9 +169,9 @@ namespace MyCheckerGame
 
                 Firstclickbox = Board[row, col]; //on which we 1st click
 
-                if ((row + 1 < 8) && (col - 1 >= 0)) //left down diagnol possible
+                if ((row + 1 < 8) && (col - 1 >= 0)) //leftdiagnoldown possible
                 {
-                    if (Board[row + 1, col - 1].AccessibleName == "none") //simple left move
+                    if (Board[row + 1, col - 1].AccessibleName == "none") //simple move to leftdiagonaldown 
                     {
                         leftdiagnoldown = Board[row + 1, col - 1];
                     }
@@ -222,16 +222,82 @@ namespace MyCheckerGame
                         rightdiagnoldown = null;
                     }
                 }
-
                 //3 boxes should be Gray
+                //1:Firstclickbox on which we 1st click
+                //2.leftdiagonaldown should be Gray
+                //3.rightdiagonaldown should be Gray
+                    Firstclickbox.BackColor=Color.Gray;
+                    if (leftdiagnoldown != null)
+                        leftdiagnoldown.BackColor = Color.Gray;
+                    if (rightdiagnoldown != null)
+                        rightdiagnoldown.BackColor = Color.Gray;
+                        click=1;
+            }
+            else if (click == 0 && clickedBox.AccessibleName == "blueking") //when clicked on blueking
+            {
+                Firstclickbox = Board[row, col]; //on which we 1st click
+
+                if ((row + 1 < 8) && (col - 1 >= 0))//leftdiagonaldown exist
+                {
+                    if (Board[row + 1, col - 1].AccessibleName == "none") //simple move to leftdiagonaldown
+                    {
+                        leftdiagnoldown = Board[row + 1, col - 1];
+                    }
+                    else //when no leftdiagonaldown exist or available
+                    {
+                        leftdiagnoldown = null;
+                    }
+                }
+
+                if ((row + 1 < 8) && (col + 1 < 8)) //rightdiagonaldown exist
+                {
+                    if (Board[row + 1, col + 1].AccessibleName == "none") //simple move to rightdiagonaldown
+                    {
+                        rightdiagnoldown = Board[row + 1, col + 1];
+                    }
+                    else //when no rightdiagonaldown exist or available
+                    {
+                        rightdiagnoldown = null;
+                    }
+                }
+                if ((row - 1 >= 0) && (col - 1 >= 0))//rightdiagonalup exist
+                {
+                    if (Board[row - 1, col - 1].AccessibleName == "none") //simple move to rightdiagonalup
+                    {
+                        leftdiagnolup = Board[row - 1, col - 1];
+                    }
+                    else //when no leftdiagonalup exist or not possible
+                    {
+                        leftdiagnolup = null;
+                    }
+                }
+                if ((row - 1 >= 0) && (col + 1 < 8)) //rightdiagonalup exist
+                {
+                    if (Board[row - 1, col + 1].AccessibleName == "none") //simple move to rightdiagonalup
+                    {
+                        rightdiagnolup = Board[row - 1, col + 1];
+                    }
+                    else //when no rightdiagonalup exist or not possible
+                    {
+                        rightdiagnolup = null;
+                    }
+                }
+
+                //5 boxes should be Gray
                 //1.The Box on which we click i.e our Firstclickbox
                 //2.The leftdiagonaldown
                 //3.The rightdiagonaldown
+                //4.The leftdiagonalup
+                //5.The rightdiagonalup
                 Firstclickbox.BackColor = Color.Gray;
                 if (leftdiagnoldown != null)
                     leftdiagnoldown.BackColor = Color.Gray;
                 if (rightdiagnoldown != null)
                     rightdiagnoldown.BackColor = Color.Gray;
+                if (leftdiagnolup != null)
+                    leftdiagnolup.BackColor = Color.Gray;
+                if (rightdiagnolup != null)
+                    rightdiagnolup.BackColor = Color.Gray;
                 click = 1;
             }
 
@@ -271,7 +337,7 @@ namespace MyCheckerGame
                     click = 0; //reset click to 0
                     turn = "red"; //red turn
 
-                    //reset to null 
+                    //reset all diagonal to null 
                     leftdiagnoldown = null;
                     rightdiagnoldown = null;
                     leftdiagnolup = null;
@@ -290,7 +356,7 @@ namespace MyCheckerGame
                     if (rightdiagnolup != null)
                         rightdiagnolup.BackColor = Color.Black;
 
-                    //reset all possible diagonal
+                    //reset all possible diagonal to null
                     leftdiagnolup = null;
                     rightdiagnolup = null;
                     leftdiagnoldown = null;
@@ -313,9 +379,10 @@ namespace MyCheckerGame
             if (click == 0 && clickedBox.AccessibleName == "red") //for simple red piece
             {
                 Firstclickbox = Board[row, col]; //firstbox on whic we click
+
                 if ((row - 1 >= 0) && (col - 1 >= 0)) //left diagonal up is possible
                 {
-                    if (Board[row - 1, col - 1].AccessibleName == "none") //when accessiblename is none just simple move
+                    if (Board[row - 1, col - 1].AccessibleName == "none") //when accessiblename is none just simple move to leftdiagonalup
                     {
                         leftdiagnolup = Board[row - 1, col - 1];
                     }
@@ -365,31 +432,99 @@ namespace MyCheckerGame
                         rightdiagnolup = null;
                     }
                 }
-               
-                    //3 boxes should be Gray
-                    //1.The Box on which we click i.e our FirstClickBox
-                    //2.The leftdiagonalup
-                    //3.The rightDiagonalup
-                    Firstclickbox.BackColor = Color.Gray;
+                //3 boxes should be Gray
+                //1.The Firstclickbox on which we 1st click
+                //2.leftdiagonalup
+                //3.rightdiagonalup
+                    Firstclickbox.BackColor=Color.Gray;
                     if (leftdiagnolup != null)
                         leftdiagnolup.BackColor = Color.Gray;
-
                     if (rightdiagnolup != null)
                         rightdiagnolup.BackColor = Color.Gray;
-                    click = 1;
+                        click=1;
+            }
+
+            else if (click == 0 && clickedBox.AccessibleName == "redking") //when cliked on redking
+            {
+                Firstclickbox = Board[row, col]; //on which we 1st click
+
+                if ((row + 1 < 8) && (col - 1 >= 0)) //leftdiagonaldown possible
+                {
+                    if (Board[row + 1, col - 1].AccessibleName == "none")//simple move to leftdiagonaldown
+                    {
+                        leftdiagnoldown = Board[row + 1, col - 1];
+                    }
+                    else //when no leftdiagonaldown exist or possible
+                    {
+                        leftdiagnoldown = null;
+                    }
                 }
-            
+
+                if ((row + 1 < 8) && (col + 1 < 8)) //rightdiagonaldown possible
+                {
+                    if (Board[row + 1, col + 1].AccessibleName == "none")//simple move to rightdiagonaldown
+                    {
+                        rightdiagnoldown = Board[row + 1, col + 1];
+                    }
+                    else //when no rightdiagonaldown exist
+                    {
+                        rightdiagnoldown = null;
+                    }
+                }
+
+                if ((row - 1 >= 0) && (col - 1 >= 0)) //leftdiagonalup possible
+                {
+                    if (Board[row - 1, col - 1].AccessibleName == "none")//simple move to leftdiagonalup
+                    {
+                        leftdiagnolup = Board[row - 1, col - 1];
+                    }
+                    else//when no leftdiagonalup exist or possible
+                    {
+                        leftdiagnolup = null;
+                    }
+                }
+
+                if ((row - 1 >= 0) && (col + 1 < 8)) //rightdiagonalup possible
+                {
+                    if (Board[row - 1, col + 1].AccessibleName == "none") //simple move to rightdiagonalup
+                    {
+                        rightdiagnolup = Board[row - 1, col + 1];
+                    }
+                    else //when no rightdiagonalup exist or possible
+                    {
+                        rightdiagnolup = null;
+                    }
+                }
+
+                //5 boxes should be Gray
+                //1.The Box on which we click i.e our FirstClickBox
+                //2.The leftdiagonalup
+                //3.The rightDiagonalup
+                //4.The leftdiagonaldown
+                //5.The rightdiagonaldown
+                Firstclickbox.BackColor = Color.Gray;
+                if (leftdiagnolup != null)
+                    leftdiagnolup.BackColor = Color.Gray;
+                if (rightdiagnolup != null)
+                    rightdiagnolup.BackColor = Color.Gray;
+                if (leftdiagnoldown != null)
+                    leftdiagnoldown.BackColor = Color.Gray;
+                if (rightdiagnoldown != null)
+                    rightdiagnoldown.BackColor = Color.Gray;
+                click = 1;
+            }
+
             else if (click == 1) //for second click to move
             {
                 // check if clicked on diagnols
                 if (clickedBox == leftdiagnoldown || clickedBox == leftdiagnolup || clickedBox == rightdiagnoldown || clickedBox == rightdiagnolup)
                 {
-                    if (row == 0) //when reaches to last row of opponent(i.e 0)
+                    if (row == 0) //when reaches to last row of opponent(i.e row 0)
                     {
                         clickedBox.BackgroundImage = MyCheckerGame.Properties.Resources.red_king_piece;
                         clickedBox.AccessibleName = "redking";
                     }
-                    else
+                    else //when reches to any row i.e row 1,2,3,4,5,6,7
                     {
                         clickedBox.BackgroundImage = Firstclickbox.BackgroundImage;//firstbox backgroundimage is given or save to clickedbox backgroundimage
                         clickedBox.AccessibleName = Firstclickbox.AccessibleName; //firstbox accessible name is given or save to clickedbox accessible name
@@ -423,7 +558,7 @@ namespace MyCheckerGame
                     rightdiagnolup = null;
 
                 }
-                else // if click on other boxes except diagnols reset its color
+                else // if click on other boxes  reset its color
                 {
                     Firstclickbox.BackColor = Color.Black;
                     if (leftdiagnoldown != null)
