@@ -2,7 +2,8 @@
 //BSE-6B
 //01-133132-144
                                                             //VP PROJECT
-//Project Main flow                                                           //Checker Game
+                                                           //Checker Game
+//Project Main flow                                                           
 //Sound Player
 //Sound system for single click and jumps
 //All pieces(red,blue) are placed on the BlackPictureBox
@@ -15,6 +16,7 @@
 // Both King Move Forward Diagonal as well as Backward Diagonal
 //Scorepanel for both pieces(red,blue)
 //Wining panel for both pieces
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +26,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace MyCheckerGame
 {
@@ -38,16 +39,21 @@ namespace MyCheckerGame
         PictureBox leftjumpboxup, rightjumpboxup;
         String turn;
         int click;
+        int scoreblue;
 
+        //Constructor
         public Form1()
         {
             InitializeComponent();
             creatingboard();
-            boardpanel.SendToBack();
+            boardpanel.SendToBack(); //sending panel to back
             settingpieces();
-            turn = "blue";
+            panelturn.BackColor = Color.SteelBlue; //panel backcolor turn to steelblue
+            turn = "blue"; //1st turn is given to blue
             click = 0;
-            //initially all the diagonal and jump box is null
+            scoreblue = 0;
+            
+            //initially all the diagonal and jump boxes are null
             leftdiagnoldown = null;
             rightdiagnoldown = null;
             leftdiagnolup = null;
@@ -61,32 +67,43 @@ namespace MyCheckerGame
 
         private void Clicked(object sender, EventArgs e)
         {
-            PictureBox clickedBox = (PictureBox)sender; //type casting to convert sender into clickedBox of PictureBox data type
-
-            if (turn == "blue")
+            
+            try
             {
-                if (clickedBox.AccessibleName == "red")
-                {
-                    // clicked on the wrong piece
-                }
-                else
-                {
-                    blueturn(clickedBox); //BlueTurn execute
-                }
+                PictureBox clickedBox = (PictureBox)sender; //type casting to convert sender into clickedBox of PictureBox data type
 
+
+                if (turn == "blue")
+                {
+                    if (clickedBox.AccessibleName == "red")
+                    {
+                        // clicked on the wrong piece
+                    }
+                    else
+                    {
+                        blueturn(clickedBox); //BlueTurn execute
+                    }
+
+                }
+                else if (turn == "red")
+                {
+                    if (clickedBox.AccessibleName == "blue")
+                    {
+                        //clicked on the wrong piece
+                    }
+                    else
+                    {
+                        redturn(clickedBox); //redturn execute
+                    }
+
+                }
             }
-            else if (turn == "red")
+
+            catch (Exception exp)
             {
-                if (clickedBox.AccessibleName == "blue")
-                {
-                    //clicked on the wrong piece
-                }
-                else
-                {
-                    redturn(clickedBox); //redturn execute
-                }
-
+                MessageBox.Show(exp.Message);
             }
+
         }
 
         private void creatingboard()
@@ -122,9 +139,9 @@ namespace MyCheckerGame
                     this.Controls.Add(Board[i, j]); //Add all these controls
                     x += 140; // 70+70 to get picturebox
                     j = j + 2; //2 col difference
-                }
+                } //while loop end
                 y += 70; //along y only 70 difference
-            }
+            } //for loop end
         }
 
         private void settingpieces()
@@ -139,7 +156,7 @@ namespace MyCheckerGame
                 }
                 while (j < 8)
                 {
-                    if (i == 0 || i == 1 || i == 2) // set blue pieces in row 1 2 3
+                    if (i == 0 || i == 1 || i == 2) // set blue pieces in row 1, 2, 3
                     {
                         Board[i, j].BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
                         Board[i, j].AccessibleName = "blue";
@@ -183,9 +200,6 @@ namespace MyCheckerGame
                             {
                                 leftjumpboxdown = Board[row + 1, col - 1];
                                 leftdiagnoldown = Board[row + 2, col - 2];
-                                //leftjumpboxdown.BackgroundImage = null;
-                               // leftjumpboxdown.AccessibleName = "none";
-                                //leftdiagnoldown.BackColor = Color.Black;
                             }
                         }
                     }
@@ -196,6 +210,7 @@ namespace MyCheckerGame
                         leftdiagnoldown = null;
                     }
                 }
+
                 if ((row + 1 < 8) && (col + 1 < 8)) //right down diagnol possible
                 {
                     if (Board[row + 1, col + 1].AccessibleName == "none") //simple right move
@@ -210,9 +225,6 @@ namespace MyCheckerGame
                             {
                                 rightjumpboxdown = Board[row + 1, col + 1];
                                 rightdiagnoldown = Board[row + 2, col + 2];
-                                //rightjumpboxdown.BackColor = Color.Black;
-                                //rightjumpboxdown.AccessibleName = "none";
-                                //rightjumpboxdown.BackgroundImage = null;
                             }
                         }
                     }
@@ -226,13 +238,15 @@ namespace MyCheckerGame
                 //1:Firstclickbox on which we 1st click
                 //2.leftdiagonaldown should be Gray
                 //3.rightdiagonaldown should be Gray
-                    Firstclickbox.BackColor=Color.Gray;
-                    if (leftdiagnoldown != null)
-                        leftdiagnoldown.BackColor = Color.Gray;
-                    if (rightdiagnoldown != null)
-                        rightdiagnoldown.BackColor = Color.Gray;
-                        click=1;
+                Firstclickbox.BackColor = Color.Gray;
+                if (leftdiagnoldown != null)
+                    leftdiagnoldown.BackColor = Color.Gray;
+                if (rightdiagnoldown != null)
+                    rightdiagnoldown.BackColor = Color.Gray;
+
+                click = 1;//reset click to 1
             }
+
             else if (click == 0 && clickedBox.AccessibleName == "blueking") //when clicked on blueking
             {
                 Firstclickbox = Board[row, col]; //on which we 1st click
@@ -243,16 +257,16 @@ namespace MyCheckerGame
                     {
                         leftdiagnoldown = Board[row + 1, col - 1];
                     }
-                        else if(Board[row+1,col-1].AccessibleName=="red"||Board[row+1,col-1].AccessibleName=="redking") //when opponent piece red or redking on diagonal make it a leftjumpboxdown
+                    else if (Board[row + 1, col - 1].AccessibleName == "red" || Board[row + 1, col - 1].AccessibleName == "redking") //when opponent piece red or redking on diagonal make it a leftjumpboxdown
                     {
-                            if((row+2<8)&&(col-2>=0)) //leftjumpboxdown is possible
+                        if ((row + 2 < 8) && (col - 2 >= 0)) //leftjumpboxdown is possible
+                        {
+                            if (Board[row + 2, col - 2].AccessibleName == "none")
                             {
-                                if(Board[row+2,col-2].AccessibleName=="none")
-                                {
-                                    leftjumpboxdown=Board[row+1,col-1];
-                                    leftdiagnoldown = Board[row + 2, col - 2];
-                                }
+                                leftjumpboxdown = Board[row + 1, col - 1];
+                                leftdiagnoldown = Board[row + 2, col - 2];
                             }
+                        }
                     }
                     else //when no leftdiagonaldown exist or available
                     {
@@ -267,16 +281,16 @@ namespace MyCheckerGame
                     {
                         rightdiagnoldown = Board[row + 1, col + 1];
                     }
-                        else if(Board[row+1,col+1].AccessibleName=="red"||Board[row+1,col+1].AccessibleName=="redking")//when opponent piece red or redking on diagonal make it a rightjumpboxdown
+                    else if (Board[row + 1, col + 1].AccessibleName == "red" || Board[row + 1, col + 1].AccessibleName == "redking")//when opponent piece red or redking on diagonal make it a rightjumpboxdown
                     {
-                            if((row+2<8)&&(col+2<8)) //rightjumpboxdown exist
+                        if ((row + 2 < 8) && (col + 2 < 8)) //rightjumpboxdown exist
+                        {
+                            if (Board[row + 2, col + 2].AccessibleName == "none") //simple jump to rightjumpboxdown
                             {
-                                if(Board[row+2,col+2].AccessibleName=="none") //simple jump to rightjumpboxdown
-                                {
-                                    rightjumpboxdown=Board[row+1,col+1];
-                                    rightdiagnoldown=Board[row+2,col+2];
-                                }
+                                rightjumpboxdown = Board[row + 1, col + 1];
+                                rightdiagnoldown = Board[row + 2, col + 2];
                             }
+                        }
 
                     }
                     else //when no rightdiagonaldown and rightjumpboxdown exist or available
@@ -291,16 +305,16 @@ namespace MyCheckerGame
                     {
                         leftdiagnolup = Board[row - 1, col - 1];
                     }
-                        else if(Board[row-1,col-1].AccessibleName=="red"||Board[row-1,col-1].AccessibleName=="redking") //when opponent piece red or redking on diagonal make it a leftjumpboxup
+                    else if (Board[row - 1, col - 1].AccessibleName == "red" || Board[row - 1, col - 1].AccessibleName == "redking") //when opponent piece red or redking on diagonal make it a leftjumpboxup
                     {
-                            if((row-2>=0)&&(col-2>=0)) //leftjumboxup exist
+                        if ((row - 2 >= 0) && (col - 2 >= 0)) //leftjumboxup exist
+                        {
+                            if (Board[row - 2, col - 2].AccessibleName == "none") //simple jump to leftjumpboxup
                             {
-                                if(Board[row-2,col-2].AccessibleName=="none") //simple jump to leftjumpboxup
-                                {
-                                    leftjumpboxup=Board[row-1,col-1];
-                                    leftdiagnolup=Board[row-2,col-2];
-                                }
+                                leftjumpboxup = Board[row - 1, col - 1];
+                                leftdiagnolup = Board[row - 2, col - 2];
                             }
+                        }
                     }
                     else //when no leftdiagonalup and leftjumpboxup exist or not possible
                     {
@@ -314,16 +328,16 @@ namespace MyCheckerGame
                     {
                         rightdiagnolup = Board[row - 1, col + 1];
                     }
-                        else if(Board[row-1,col+1].AccessibleName=="red"||Board[row-1,col+1].AccessibleName=="redking")//when opponent piece red or redking on diagonal make it a rightjumpboxup
+                    else if (Board[row - 1, col + 1].AccessibleName == "red" || Board[row - 1, col + 1].AccessibleName == "redking")//when opponent piece red or redking on diagonal make it a rightjumpboxup
                     {
-                            if((row-2>=0)&&(col+2<8)) //when rightjumpboxup is possible
+                        if ((row - 2 >= 0) && (col + 2 < 8)) //when rightjumpboxup is possible
+                        {
+                            if (Board[row - 2, col + 2].AccessibleName == "none")
                             {
-                                if(Board[row-2,col+2].AccessibleName=="none")
-                                {
-                                    rightjumpboxup=Board[row-1,col+1];
-                                    rightdiagnolup=Board[row-2,col+2];
-                                }
+                                rightjumpboxup = Board[row - 1, col + 1];
+                                rightdiagnolup = Board[row - 2, col + 2];
                             }
+                        }
                     }
                     else //when no rightdiagonalup exist or not possible
                     {
@@ -347,9 +361,10 @@ namespace MyCheckerGame
                     leftdiagnolup.BackColor = Color.Gray;
                 if (rightdiagnolup != null)
                     rightdiagnolup.BackColor = Color.Gray;
-                click = 1;
-            }
 
+                click = 1; //reset click to 1
+            }
+                 
             else if (click == 1) // second click for move
             {
                 // check if clicked on diagnols
@@ -383,14 +398,51 @@ namespace MyCheckerGame
                     if (rightdiagnolup != null)
                         rightdiagnolup.BackColor = Color.Black;
 
+                    //check if there is any jump
+
+                    if (leftjumpboxup != null && clickedBox == leftdiagnolup) //if leftjumpboxup exist and clicked on leftdiagonalup
+                    {
+                        //Clear the leftjumpboxup
+                        leftjumpboxup.BackgroundImage = null;
+                        leftjumpboxup.AccessibleName = "none";
+                        
+                    }
+                    else if (leftjumpboxdown != null && clickedBox == leftdiagnoldown)//if leftjumpboxdown exist and clicked on leftdiagonaldown
+                    {
+                        //Clear the leftjumpboxdown
+                        leftjumpboxdown.BackgroundImage = null;
+                        leftjumpboxdown.AccessibleName = "none";
+                        
+                    }
+
+                    else if (rightjumpboxup != null && clickedBox == rightdiagnolup) //if rightjumpboxup exist and clicked on rightdiagonalup
+                    {
+                        //Clear the rightjumpboxup
+                        rightjumpboxup.BackgroundImage = null;
+                        rightjumpboxup.AccessibleName = "none";
+                        
+                    }
+                    else if (rightjumpboxdown != null && clickedBox == rightdiagnoldown) //if rightjumpboxdown exist and clicked on rightdiagonaldown
+                    {
+                        //Clear the rightjumpboxdown
+                        rightjumpboxdown.BackgroundImage = null;
+                        rightjumpboxdown.AccessibleName = "none";
+                        
+                    }
+
                     click = 0; //reset click to 0
                     turn = "red"; //red turn
+                    panelturn.BackColor = Color.Crimson; //Panel backcolor turn into crimson
 
                     //reset all diagonal to null 
                     leftdiagnoldown = null;
                     rightdiagnoldown = null;
                     leftdiagnolup = null;
                     rightdiagnolup = null;
+                    leftjumpboxup = null;
+                    rightjumpboxup = null;
+                    leftjumpboxdown = null;
+                    rightjumpboxdown = null;
 
                 }
                 else // if click on other boxes exept diagnols reset the color of diagonal
@@ -410,11 +462,16 @@ namespace MyCheckerGame
                     rightdiagnolup = null;
                     leftdiagnoldown = null;
                     rightdiagnoldown = null;
+                    leftjumpboxup = null;
+                    rightjumpboxup = null;
+                    leftjumpboxdown = null;
+                    rightjumpboxdown = null;
 
                     click = 0; //reset click to 0
                 }
             }
         }
+
 
         //For red check left up diagonal(leftjumpboxup) and right up diagonal (rightjumpboxup)
         private void redturn(PictureBox clickedBox)
@@ -427,7 +484,7 @@ namespace MyCheckerGame
 
             if (click == 0 && clickedBox.AccessibleName == "red") //for simple red piece
             {
-                Firstclickbox = Board[row, col]; //firstbox on whic we click
+                Firstclickbox = Board[row, col]; //firstbox on which we click
 
                 if ((row - 1 >= 0) && (col - 1 >= 0)) //left diagonal up is possible
                 {
@@ -443,9 +500,6 @@ namespace MyCheckerGame
                             {
                                 leftjumpboxup = Board[row - 1, col - 1];
                                 leftdiagnolup = Board[row - 2, col - 2];
-                                // leftjumpboxup.BackColor = Color.Black;
-                                // leftjumpboxup.AccessibleName = "none";
-                                //leftjumpboxup.BackgroundImage = null;
                             }
                         }
                     }
@@ -469,9 +523,6 @@ namespace MyCheckerGame
                             {
                                 rightjumpboxup = Board[row - 1, col + 1];
                                 rightdiagnolup = Board[row - 2, col + 2];
-                                //rightjumpboxup.BackColor = Color.Black;
-                                //rightjumpboxup.AccessibleName = "none";
-                                //rightjumpboxup.BackColor = Color.Black;
                             }
                         }
                     }
@@ -485,12 +536,13 @@ namespace MyCheckerGame
                 //1.The Firstclickbox on which we 1st click
                 //2.leftdiagonalup
                 //3.rightdiagonalup
-                    Firstclickbox.BackColor=Color.Gray;
-                    if (leftdiagnolup != null)
-                        leftdiagnolup.BackColor = Color.Gray;
-                    if (rightdiagnolup != null)
-                        rightdiagnolup.BackColor = Color.Gray;
-                        click=1;
+                Firstclickbox.BackColor = Color.Gray;
+                if (leftdiagnolup != null)
+                    leftdiagnolup.BackColor = Color.Gray;
+                if (rightdiagnolup != null)
+                    rightdiagnolup.BackColor = Color.Gray;
+
+                click = 1; //reset click to 1
             }
 
             else if (click == 0 && clickedBox.AccessibleName == "redking") //when cliked on redking
@@ -503,16 +555,16 @@ namespace MyCheckerGame
                     {
                         leftdiagnoldown = Board[row + 1, col - 1];
                     }
-                        else if(Board[row+1,col-1].AccessibleName=="blue"||Board[row+1,col-1].AccessibleName=="blueking")
+                    else if (Board[row + 1, col - 1].AccessibleName == "blue" || Board[row + 1, col - 1].AccessibleName == "blueking")
                     {
-                            if((row+2<8)&&(col-2>=0)) //leftjumpboxdown possible
+                        if ((row + 2 < 8) && (col - 2 >= 0)) //leftjumpboxdown possible
+                        {
+                            if (Board[row + 2, col - 2].AccessibleName == "none") //simple jump to leftjumpboxdown
                             {
-                                if(Board[row+2,col-2].AccessibleName=="none") //simple jump to leftjumpboxdown
-                                {
-                                    leftjumpboxdown=Board[row+1,col-1];
-                                    leftdiagnoldown=Board[row+2,col-2];
-                                }
+                                leftjumpboxdown = Board[row + 1, col - 1];
+                                leftdiagnoldown = Board[row + 2, col - 2];
                             }
+                        }
                     }
                     else //when no leftdiagonaldown and leftjumpboxdown exist or possible
                     {
@@ -527,16 +579,16 @@ namespace MyCheckerGame
                     {
                         rightdiagnoldown = Board[row + 1, col + 1];
                     }
-                        else if(Board[row+1,col+1].AccessibleName=="blue"||Board[row+2,col+2].AccessibleName=="blueking")
+                    else if (Board[row + 1, col + 1].AccessibleName == "blue" || Board[row + 2, col + 2].AccessibleName == "blueking")
                     {
-                            if((row+2<8)&&(col+2<8)) //rightjumpboxdown possible
+                        if ((row + 2 < 8) && (col + 2 < 8)) //rightjumpboxdown possible
+                        {
+                            if (Board[row + 2, col + 2].AccessibleName == "none") //simple jump to rightjumpboxdown
                             {
-                                if(Board[row+2,col+2].AccessibleName=="none") //simple jump to rightjumpboxdown
-                                {
-                                    rightjumpboxdown=Board[row+1,col+1];
-                                    rightdiagnoldown =Board[row + 2, col + 2];
-                                }
+                                rightjumpboxdown = Board[row + 1, col + 1];
+                                rightdiagnoldown = Board[row + 2, col + 2];
                             }
+                        }
                     }
                     else //when no rightdiagonaldown and rightjumpboxup exist or possible
                     {
@@ -551,16 +603,16 @@ namespace MyCheckerGame
                     {
                         leftdiagnolup = Board[row - 1, col - 1];
                     }
-                        else if(Board[row-1,col-1].AccessibleName=="blue"||Board[row-1,col-1].AccessibleName=="blueking")
+                    else if (Board[row - 1, col - 1].AccessibleName == "blue" || Board[row - 1, col - 1].AccessibleName == "blueking")
                     {
-                            if((row-2>=0)&&(col-2>=0)) //leftjumpboxup possible
+                        if ((row - 2 >= 0) && (col - 2 >= 0)) //leftjumpboxup possible
+                        {
+                            if (Board[row - 2, col - 2].AccessibleName == "none") //simple jump to leftjumpboxup
                             {
-                                if(Board[row-2,col-2].AccessibleName=="none") //simple jump to leftjumpboxup
-                                {
-                                    leftjumpboxup=Board[row-1,col-1];
-                                    leftdiagnolup=Board[row-2,col-2];
-                                }
+                                leftjumpboxup = Board[row - 1, col - 1];
+                                leftdiagnolup = Board[row - 2, col - 2];
                             }
+                        }
                     }
                     else//when no leftdiagonalup and leftjumpboxup exist or possible
                     {
@@ -575,16 +627,16 @@ namespace MyCheckerGame
                     {
                         rightdiagnolup = Board[row - 1, col + 1];
                     }
-                        else if(Board[row-1,col+1].AccessibleName=="blue"||Board[row-1,col+1].AccessibleName=="blueking")
+                    else if (Board[row - 1, col + 1].AccessibleName == "blue" || Board[row - 1, col + 1].AccessibleName == "blueking")
                     {
-                            if((row-2<8)&&(col+2<8))  //rightjumpboxup possible
+                        if ((row - 2 < 8) && (col + 2 < 8))  //rightjumpboxup possible
+                        {
+                            if (Board[row - 2, col + 2].AccessibleName == "none")  //simple jump to rightjumpboxup
                             {
-                                if(Board[row-2,col+2].AccessibleName=="none")  //simple jump to rightjumpboxup
-                                {
-                                    rightjumpboxup=Board[row-1,col+1];
-                                    rightdiagnolup=Board[row-2,col+2];
-                                }
+                                rightjumpboxup = Board[row - 1, col + 1];
+                                rightdiagnolup = Board[row - 2, col + 2];
                             }
+                        }
                     }
                     else //when no rightdiagonalup and rightjumpbox exist or possible
                     {
@@ -608,7 +660,8 @@ namespace MyCheckerGame
                     leftdiagnoldown.BackColor = Color.Gray;
                 if (rightdiagnoldown != null)
                     rightdiagnoldown.BackColor = Color.Gray;
-                click = 1;
+
+                click = 1; //reset click to 1
             }
 
             else if (click == 1) //for second click to move
@@ -644,15 +697,46 @@ namespace MyCheckerGame
                     if (rightdiagnolup != null)
                         rightdiagnolup.BackColor = Color.Black;
 
+                    //check if there is any jump
+
+                    if (leftjumpboxup != null && clickedBox == leftdiagnolup) //if leftjumpboxup exist and clicked on leftdiagonal up
+                    {
+                        //Clear the leftjumpboxup
+                        leftjumpboxup.BackgroundImage = null;
+                        leftjumpboxup.AccessibleName = "none";
+                    }
+                    else if (leftjumpboxdown != null && clickedBox == leftdiagnoldown) //if leftjumpboxdown exist and clicked on leftdiagonaldown
+                    {
+                        //Clear the leftjumpboxdown
+                        leftjumpboxdown.BackgroundImage = null;
+                        leftjumpboxdown.AccessibleName = "none";
+                    }
+                    else if (rightjumpboxup != null && clickedBox == rightdiagnolup) //if rightjumpboxup exist and clicked on rightdiagonalup
+                    {
+                        //Clear the rightjumpboxup
+                        rightjumpboxup.BackgroundImage = null;
+                        rightjumpboxup.AccessibleName = "none";
+                    }
+                    else if (rightjumpboxdown != null && clickedBox == rightdiagnoldown) //ifrightjumpboxdown exist and clicked on rightdiagonaldown
+                    {
+                        //Clear the rightjumpboxdown
+                        rightjumpboxdown.BackgroundImage = null;
+                        rightjumpboxdown.AccessibleName = "none";
+                    }
 
                     click = 0; //reset click to 0
                     turn = "blue";//when turn is of blue
+                    panelturn.BackColor = Color.SteelBlue; //panel backcolor turn to steelblue
 
                     //reset to null all the diagonal left up,left down,right up,right down
                     leftdiagnoldown = null;
                     rightdiagnoldown = null;
                     leftdiagnolup = null;
                     rightdiagnolup = null;
+                    leftjumpboxup = null;
+                    rightjumpboxup = null;
+                    leftjumpboxdown = null;
+                    rightjumpboxdown = null;
 
                 }
                 else // if click on other boxes  reset its color
@@ -672,16 +756,69 @@ namespace MyCheckerGame
                     rightdiagnoldown = null;
                     leftdiagnolup = null;
                     rightdiagnolup = null;
+                    leftjumpboxup = null;
+                    rightjumpboxup = null;
+                    leftjumpboxdown = null;
+                    rightjumpboxdown = null;
 
                     click = 0; //reset click to 0
                 }
             }
 
-            }
-
+        }
+       public void bluescoreupdate()
+        {
+           if(scoreblue==1)
+           {
+               r1.BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
+           }
+           else if(scoreblue==2)
+           {
+               r2.BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
+           }
+           else if(scoreblue==3)
+           {
+               r3.BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
+           }
+           else if(scoreblue==4)
+           {
+               r4.BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
+           }
+           else if(scoreblue==5)
+           {
+               r5.BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
+           }
+           else if(scoreblue==6)
+           {
+               r6.BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
+           }
+           else if(scoreblue==7)
+           {
+               r7.BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
+           }
+           else if(scoreblue==8)
+           {
+               r8.BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
+           }
+           else if(scoreblue==9)
+           {
+               r9.BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
+           }
+           else if(scoreblue==10)
+           {
+               r10.BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
+           }
+           else if(scoreblue==11)
+           {
+               r11.BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
+           }
+           else if(scoreblue==12)
+           {
+               r12.BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
+           }
         }
     }
-
+}
 
         
         

@@ -41,7 +41,7 @@
             this.r1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.ScorePanel = new System.Windows.Forms.Panel();
-            this.redscore = new System.Windows.Forms.Panel();
+            this.redscorepanel = new System.Windows.Forms.Panel();
             this.b1 = new System.Windows.Forms.PictureBox();
             this.b2 = new System.Windows.Forms.PictureBox();
             this.b12 = new System.Windows.Forms.PictureBox();
@@ -54,7 +54,7 @@
             this.b4 = new System.Windows.Forms.PictureBox();
             this.b5 = new System.Windows.Forms.PictureBox();
             this.b3 = new System.Windows.Forms.PictureBox();
-            this.bluescore = new System.Windows.Forms.Panel();
+            this.bluescorepanel = new System.Windows.Forms.Panel();
             this.r12 = new System.Windows.Forms.PictureBox();
             this.r2 = new System.Windows.Forms.PictureBox();
             this.r11 = new System.Windows.Forms.PictureBox();
@@ -68,11 +68,12 @@
             this.r7 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.bluescorelabel = new System.Windows.Forms.Label();
             this.Red = new System.Windows.Forms.Label();
             this.Blue = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelturn = new System.Windows.Forms.Panel();
             this.boardpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).BeginInit();
@@ -84,7 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.r1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.ScorePanel.SuspendLayout();
-            this.redscore.SuspendLayout();
+            this.redscorepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.b1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b12)).BeginInit();
@@ -97,7 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.b4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b3)).BeginInit();
-            this.bluescore.SuspendLayout();
+            this.bluescorepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.r12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.r2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.r11)).BeginInit();
@@ -231,6 +232,7 @@
             // Score
             // 
             this.Score.AutoSize = true;
+            this.Score.BackColor = System.Drawing.Color.Transparent;
             this.Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Score.Location = new System.Drawing.Point(26, 8);
             this.Score.Name = "Score";
@@ -240,7 +242,9 @@
             // 
             // r1
             // 
-            this.r1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.r1.BackColor = System.Drawing.Color.Transparent;
+            this.r1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.r1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.r1.Location = new System.Drawing.Point(3, 3);
             this.r1.Name = "r1";
             this.r1.Size = new System.Drawing.Size(50, 50);
@@ -258,8 +262,8 @@
             // ScorePanel
             // 
             this.ScorePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ScorePanel.BackgroundImage")));
-            this.ScorePanel.Controls.Add(this.redscore);
-            this.ScorePanel.Controls.Add(this.bluescore);
+            this.ScorePanel.Controls.Add(this.redscorepanel);
+            this.ScorePanel.Controls.Add(this.bluescorepanel);
             this.ScorePanel.Controls.Add(this.pictureBox3);
             this.ScorePanel.Controls.Add(this.Score);
             this.ScorePanel.Location = new System.Drawing.Point(751, 50);
@@ -267,29 +271,32 @@
             this.ScorePanel.Size = new System.Drawing.Size(271, 530);
             this.ScorePanel.TabIndex = 2;
             // 
-            // redscore
+            // redscorepanel
             // 
-            this.redscore.BackColor = System.Drawing.Color.White;
-            this.redscore.Controls.Add(this.b1);
-            this.redscore.Controls.Add(this.b2);
-            this.redscore.Controls.Add(this.b12);
-            this.redscore.Controls.Add(this.b11);
-            this.redscore.Controls.Add(this.b9);
-            this.redscore.Controls.Add(this.b10);
-            this.redscore.Controls.Add(this.b8);
-            this.redscore.Controls.Add(this.b7);
-            this.redscore.Controls.Add(this.b6);
-            this.redscore.Controls.Add(this.b4);
-            this.redscore.Controls.Add(this.b5);
-            this.redscore.Controls.Add(this.b3);
-            this.redscore.Location = new System.Drawing.Point(6, 328);
-            this.redscore.Name = "redscore";
-            this.redscore.Size = new System.Drawing.Size(227, 199);
-            this.redscore.TabIndex = 27;
+            this.redscorepanel.BackColor = System.Drawing.Color.Transparent;
+            this.redscorepanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.redscorepanel.Controls.Add(this.b1);
+            this.redscorepanel.Controls.Add(this.b2);
+            this.redscorepanel.Controls.Add(this.b12);
+            this.redscorepanel.Controls.Add(this.b11);
+            this.redscorepanel.Controls.Add(this.b9);
+            this.redscorepanel.Controls.Add(this.b10);
+            this.redscorepanel.Controls.Add(this.b8);
+            this.redscorepanel.Controls.Add(this.b7);
+            this.redscorepanel.Controls.Add(this.b6);
+            this.redscorepanel.Controls.Add(this.b4);
+            this.redscorepanel.Controls.Add(this.b5);
+            this.redscorepanel.Controls.Add(this.b3);
+            this.redscorepanel.Location = new System.Drawing.Point(6, 328);
+            this.redscorepanel.Name = "redscorepanel";
+            this.redscorepanel.Size = new System.Drawing.Size(227, 199);
+            this.redscorepanel.TabIndex = 27;
             // 
             // b1
             // 
-            this.b1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.b1.BackColor = System.Drawing.Color.Transparent;
+            this.b1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.b1.Location = new System.Drawing.Point(3, 133);
             this.b1.Name = "b1";
             this.b1.Size = new System.Drawing.Size(50, 50);
@@ -298,7 +305,9 @@
             // 
             // b2
             // 
-            this.b2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.b2.BackColor = System.Drawing.Color.Transparent;
+            this.b2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.b2.Location = new System.Drawing.Point(58, 133);
             this.b2.Name = "b2";
             this.b2.Size = new System.Drawing.Size(50, 50);
@@ -307,7 +316,9 @@
             // 
             // b12
             // 
-            this.b12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.b12.BackColor = System.Drawing.Color.Transparent;
+            this.b12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.b12.Location = new System.Drawing.Point(170, 21);
             this.b12.Name = "b12";
             this.b12.Size = new System.Drawing.Size(50, 50);
@@ -316,7 +327,9 @@
             // 
             // b11
             // 
-            this.b11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.b11.BackColor = System.Drawing.Color.Transparent;
+            this.b11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.b11.Location = new System.Drawing.Point(114, 21);
             this.b11.Name = "b11";
             this.b11.Size = new System.Drawing.Size(50, 50);
@@ -325,7 +338,9 @@
             // 
             // b9
             // 
-            this.b9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.b9.BackColor = System.Drawing.Color.Transparent;
+            this.b9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.b9.Location = new System.Drawing.Point(3, 21);
             this.b9.Name = "b9";
             this.b9.Size = new System.Drawing.Size(50, 50);
@@ -334,7 +349,9 @@
             // 
             // b10
             // 
-            this.b10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.b10.BackColor = System.Drawing.Color.Transparent;
+            this.b10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.b10.Location = new System.Drawing.Point(58, 22);
             this.b10.Name = "b10";
             this.b10.Size = new System.Drawing.Size(50, 50);
@@ -343,7 +360,9 @@
             // 
             // b8
             // 
-            this.b8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.b8.BackColor = System.Drawing.Color.Transparent;
+            this.b8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.b8.Location = new System.Drawing.Point(170, 77);
             this.b8.Name = "b8";
             this.b8.Size = new System.Drawing.Size(50, 50);
@@ -352,7 +371,9 @@
             // 
             // b7
             // 
-            this.b7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.b7.BackColor = System.Drawing.Color.Transparent;
+            this.b7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.b7.Location = new System.Drawing.Point(114, 77);
             this.b7.Name = "b7";
             this.b7.Size = new System.Drawing.Size(50, 50);
@@ -361,7 +382,9 @@
             // 
             // b6
             // 
-            this.b6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.b6.BackColor = System.Drawing.Color.Transparent;
+            this.b6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.b6.Location = new System.Drawing.Point(58, 77);
             this.b6.Name = "b6";
             this.b6.Size = new System.Drawing.Size(50, 50);
@@ -370,7 +393,9 @@
             // 
             // b4
             // 
-            this.b4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.b4.BackColor = System.Drawing.Color.Transparent;
+            this.b4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.b4.Location = new System.Drawing.Point(170, 133);
             this.b4.Name = "b4";
             this.b4.Size = new System.Drawing.Size(50, 50);
@@ -379,7 +404,9 @@
             // 
             // b5
             // 
-            this.b5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.b5.BackColor = System.Drawing.Color.Transparent;
+            this.b5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.b5.Location = new System.Drawing.Point(3, 77);
             this.b5.Name = "b5";
             this.b5.Size = new System.Drawing.Size(50, 50);
@@ -388,36 +415,41 @@
             // 
             // b3
             // 
-            this.b3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.b3.BackColor = System.Drawing.Color.Transparent;
+            this.b3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.b3.Location = new System.Drawing.Point(114, 133);
             this.b3.Name = "b3";
             this.b3.Size = new System.Drawing.Size(50, 50);
             this.b3.TabIndex = 16;
             this.b3.TabStop = false;
             // 
-            // bluescore
+            // bluescorepanel
             // 
-            this.bluescore.BackColor = System.Drawing.Color.White;
-            this.bluescore.Controls.Add(this.r1);
-            this.bluescore.Controls.Add(this.r12);
-            this.bluescore.Controls.Add(this.r2);
-            this.bluescore.Controls.Add(this.r11);
-            this.bluescore.Controls.Add(this.r3);
-            this.bluescore.Controls.Add(this.r10);
-            this.bluescore.Controls.Add(this.r4);
-            this.bluescore.Controls.Add(this.r9);
-            this.bluescore.Controls.Add(this.r5);
-            this.bluescore.Controls.Add(this.r8);
-            this.bluescore.Controls.Add(this.r6);
-            this.bluescore.Controls.Add(this.r7);
-            this.bluescore.Location = new System.Drawing.Point(3, 42);
-            this.bluescore.Name = "bluescore";
-            this.bluescore.Size = new System.Drawing.Size(230, 171);
-            this.bluescore.TabIndex = 26;
+            this.bluescorepanel.BackColor = System.Drawing.Color.Transparent;
+            this.bluescorepanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bluescorepanel.Controls.Add(this.r1);
+            this.bluescorepanel.Controls.Add(this.r12);
+            this.bluescorepanel.Controls.Add(this.r2);
+            this.bluescorepanel.Controls.Add(this.r11);
+            this.bluescorepanel.Controls.Add(this.r3);
+            this.bluescorepanel.Controls.Add(this.r10);
+            this.bluescorepanel.Controls.Add(this.r4);
+            this.bluescorepanel.Controls.Add(this.r9);
+            this.bluescorepanel.Controls.Add(this.r5);
+            this.bluescorepanel.Controls.Add(this.r8);
+            this.bluescorepanel.Controls.Add(this.r6);
+            this.bluescorepanel.Controls.Add(this.r7);
+            this.bluescorepanel.Location = new System.Drawing.Point(3, 42);
+            this.bluescorepanel.Name = "bluescorepanel";
+            this.bluescorepanel.Size = new System.Drawing.Size(230, 171);
+            this.bluescorepanel.TabIndex = 26;
             // 
             // r12
             // 
-            this.r12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.r12.BackColor = System.Drawing.Color.Transparent;
+            this.r12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.r12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.r12.Location = new System.Drawing.Point(168, 115);
             this.r12.Name = "r12";
             this.r12.Size = new System.Drawing.Size(50, 50);
@@ -426,7 +458,9 @@
             // 
             // r2
             // 
-            this.r2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.r2.BackColor = System.Drawing.Color.Transparent;
+            this.r2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.r2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.r2.Location = new System.Drawing.Point(56, 3);
             this.r2.Name = "r2";
             this.r2.Size = new System.Drawing.Size(50, 50);
@@ -435,7 +469,9 @@
             // 
             // r11
             // 
-            this.r11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.r11.BackColor = System.Drawing.Color.Transparent;
+            this.r11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.r11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.r11.Location = new System.Drawing.Point(112, 115);
             this.r11.Name = "r11";
             this.r11.Size = new System.Drawing.Size(50, 50);
@@ -444,7 +480,9 @@
             // 
             // r3
             // 
-            this.r3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.r3.BackColor = System.Drawing.Color.Transparent;
+            this.r3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.r3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.r3.Location = new System.Drawing.Point(112, 3);
             this.r3.Name = "r3";
             this.r3.Size = new System.Drawing.Size(50, 50);
@@ -453,7 +491,9 @@
             // 
             // r10
             // 
-            this.r10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.r10.BackColor = System.Drawing.Color.Transparent;
+            this.r10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.r10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.r10.Location = new System.Drawing.Point(56, 115);
             this.r10.Name = "r10";
             this.r10.Size = new System.Drawing.Size(50, 50);
@@ -462,7 +502,9 @@
             // 
             // r4
             // 
-            this.r4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.r4.BackColor = System.Drawing.Color.Transparent;
+            this.r4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.r4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.r4.Location = new System.Drawing.Point(168, 3);
             this.r4.Name = "r4";
             this.r4.Size = new System.Drawing.Size(50, 50);
@@ -471,7 +513,9 @@
             // 
             // r9
             // 
-            this.r9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.r9.BackColor = System.Drawing.Color.Transparent;
+            this.r9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.r9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.r9.Location = new System.Drawing.Point(3, 115);
             this.r9.Name = "r9";
             this.r9.Size = new System.Drawing.Size(50, 50);
@@ -480,7 +524,9 @@
             // 
             // r5
             // 
-            this.r5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.r5.BackColor = System.Drawing.Color.Transparent;
+            this.r5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.r5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.r5.Location = new System.Drawing.Point(3, 59);
             this.r5.Name = "r5";
             this.r5.Size = new System.Drawing.Size(50, 50);
@@ -489,7 +535,9 @@
             // 
             // r8
             // 
-            this.r8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.r8.BackColor = System.Drawing.Color.Transparent;
+            this.r8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.r8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.r8.Location = new System.Drawing.Point(168, 59);
             this.r8.Name = "r8";
             this.r8.Size = new System.Drawing.Size(50, 50);
@@ -498,7 +546,9 @@
             // 
             // r6
             // 
-            this.r6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.r6.BackColor = System.Drawing.Color.Transparent;
+            this.r6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.r6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.r6.Location = new System.Drawing.Point(56, 59);
             this.r6.Name = "r6";
             this.r6.Size = new System.Drawing.Size(50, 50);
@@ -507,7 +557,9 @@
             // 
             // r7
             // 
-            this.r7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.r7.BackColor = System.Drawing.Color.Transparent;
+            this.r7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.r7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.r7.Location = new System.Drawing.Point(112, 59);
             this.r7.Name = "r7";
             this.r7.Size = new System.Drawing.Size(50, 50);
@@ -516,8 +568,9 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.bluescorelabel);
             this.panel1.Controls.Add(this.Red);
             this.panel1.Controls.Add(this.Blue);
             this.panel1.Controls.Add(this.pictureBox4);
@@ -531,21 +584,21 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(20, 416);
+            this.label2.Location = new System.Drawing.Point(37, 416);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(13, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Red Score";
+            this.label2.Text = "0";
             // 
-            // label1
+            // bluescorelabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(20, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Blue Score";
+            this.bluescorelabel.AutoSize = true;
+            this.bluescorelabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.bluescorelabel.Location = new System.Drawing.Point(37, 97);
+            this.bluescorelabel.Name = "bluescorelabel";
+            this.bluescorelabel.Size = new System.Drawing.Size(13, 13);
+            this.bluescorelabel.TabIndex = 4;
+            this.bluescorelabel.Text = "0";
             // 
             // Red
             // 
@@ -571,7 +624,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImage = global::MyCheckerGame.Properties.Resources.red_piece;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Location = new System.Drawing.Point(9, 432);
@@ -582,7 +635,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::MyCheckerGame.Properties.Resources.blue_piece;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(9, 24);
@@ -590,6 +643,15 @@
             this.pictureBox1.Size = new System.Drawing.Size(70, 70);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // panelturn
+            // 
+            this.panelturn.BackColor = System.Drawing.Color.Transparent;
+            this.panelturn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelturn.Location = new System.Drawing.Point(2, 126);
+            this.panelturn.Name = "panelturn";
+            this.panelturn.Size = new System.Drawing.Size(20, 246);
+            this.panelturn.TabIndex = 58;
             // 
             // Form1
             // 
@@ -600,6 +662,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1073, 603);
+            this.Controls.Add(this.panelturn);
             this.Controls.Add(this.boardpanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ScorePanel);
@@ -618,7 +681,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ScorePanel.ResumeLayout(false);
             this.ScorePanel.PerformLayout();
-            this.redscore.ResumeLayout(false);
+            this.redscorepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.b1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b12)).EndInit();
@@ -631,7 +694,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.b4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b3)).EndInit();
-            this.bluescore.ResumeLayout(false);
+            this.bluescorepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.r12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.r2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.r11)).EndInit();
@@ -691,12 +754,13 @@
         private System.Windows.Forms.PictureBox r6;
         private System.Windows.Forms.PictureBox r5;
         private System.Windows.Forms.PictureBox r4;
-        private System.Windows.Forms.Panel bluescore;
-        private System.Windows.Forms.Panel redscore;
+        private System.Windows.Forms.Panel bluescorepanel;
+        private System.Windows.Forms.Panel redscorepanel;
         private System.Windows.Forms.Label Blue;
         private System.Windows.Forms.Label Red;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label bluescorelabel;
+        private System.Windows.Forms.Panel panelturn;
 
 
     }
