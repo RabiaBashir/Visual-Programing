@@ -67,7 +67,7 @@
             this.r6 = new System.Windows.Forms.PictureBox();
             this.r7 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.redscorelabel = new System.Windows.Forms.Label();
             this.bluescorelabel = new System.Windows.Forms.Label();
             this.Red = new System.Windows.Forms.Label();
             this.Blue = new System.Windows.Forms.Label();
@@ -569,7 +569,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.redscorelabel);
             this.panel1.Controls.Add(this.bluescorelabel);
             this.panel1.Controls.Add(this.Red);
             this.panel1.Controls.Add(this.Blue);
@@ -580,15 +580,15 @@
             this.panel1.Size = new System.Drawing.Size(127, 519);
             this.panel1.TabIndex = 3;
             // 
-            // label2
+            // redscorelabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(37, 416);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "0";
+            this.redscorelabel.AutoSize = true;
+            this.redscorelabel.ForeColor = System.Drawing.Color.Red;
+            this.redscorelabel.Location = new System.Drawing.Point(37, 416);
+            this.redscorelabel.Name = "redscorelabel";
+            this.redscorelabel.Size = new System.Drawing.Size(13, 13);
+            this.redscorelabel.TabIndex = 5;
+            this.redscorelabel.Text = "0";
             // 
             // bluescorelabel
             // 
@@ -758,7 +758,7 @@
         private System.Windows.Forms.Panel redscorepanel;
         private System.Windows.Forms.Label Blue;
         private System.Windows.Forms.Label Red;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label redscorelabel;
         private System.Windows.Forms.Label bluescorelabel;
         private System.Windows.Forms.Panel panelturn;
 

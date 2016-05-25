@@ -81,6 +81,15 @@ namespace MyCheckerGame.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream jump_sound {
+            get {
+                return ResourceManager.GetStream("jump_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap red_king_piece {
@@ -101,21 +110,20 @@ namespace MyCheckerGame.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.Drawing.Bitmap woodSheet1 {
+        internal static System.IO.UnmanagedMemoryStream simple_clicksound {
             get {
-                object obj = ResourceManager.GetObject("woodSheet1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetStream("simple_clicksound", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap woodSheet11 {
+        internal static System.Drawing.Bitmap woodSheet1 {
             get {
-                object obj = ResourceManager.GetObject("woodSheet11", resourceCulture);
+                object obj = ResourceManager.GetObject("woodSheet1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

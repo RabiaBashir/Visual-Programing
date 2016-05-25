@@ -84,8 +84,13 @@
     <None Include="Resources\blue_king_piece.png" />
     <None Include="Resources\red_piece.png" />
     <None Include="Resources\blue_piece.png" />
-    <None Include="Resources\woodSheet11.jpg" />
     <None Include="Resources\woodSheet1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jump_sound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\simple_clicksound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

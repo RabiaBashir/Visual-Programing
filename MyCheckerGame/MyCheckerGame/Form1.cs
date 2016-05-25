@@ -12,12 +12,16 @@
 //Blue piece move leftdown diagonal and rightdown diagonal
 //Red piece move leftup diagonal and rightup diagonal
 //Leftup, Rightup ,LeftDown,RightDown Diagonal is shown by Grey Color
-//Leftjumpboxup,leftjumpboxdown.rightjumpboxup,rightjumpboxdown for every bluepiece,redpiece blueking.redking
+//Leftjumpboxup,leftjumpboxdown.rightjumpboxup,rightjumpboxdown for every bluepiece,redpiece, blueking and redking
 // Both King Move Forward Diagonal as well as Backward Diagonal
 //Scorepanel for both pieces(red,blue)
-//Wining panel for both pieces
+//Wining panel for both pieces(red,blue)
+//Every piece(red,blue) gets 2 click(i.e click==0) and (click==1)
+//(click==0) to show possible moves on the diagonal with indicating Gray Color
+//(click==1) to move on any of the diagonal
 
 using System;
+using System.Media;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +35,8 @@ namespace MyCheckerGame
 {
     public partial class Form1 : Form
     {
+        SoundPlayer simpleclicksound = new SoundPlayer(MyCheckerGame.Properties.Resources.simple_clicksound);
+        SoundPlayer jumpsound = new SoundPlayer(MyCheckerGame.Properties.Resources.jump_sound);
         PictureBox[,] Board = new PictureBox[8, 8]; //8 row and 8 col
         PictureBox Firstclickbox; //on which we 1st click
         PictureBox leftdiagnoldown, rightdiagnoldown;
@@ -39,7 +45,7 @@ namespace MyCheckerGame
         PictureBox leftjumpboxup, rightjumpboxup;
         String turn;
         int click;
-        int scoreblue;
+        int scoreblue,scorered;
 
         //Constructor
         public Form1()
@@ -52,6 +58,7 @@ namespace MyCheckerGame
             turn = "blue"; //1st turn is given to blue
             click = 0;
             scoreblue = 0;
+            scorered = 0;
             
             //initially all the diagonal and jump boxes are null
             leftdiagnoldown = null;
@@ -108,40 +115,49 @@ namespace MyCheckerGame
 
         private void creatingboard()
         {
-            int x = 20; //starting location along x-axis
-            int y = 20; //starting location along y-axis
-            int j = 0;
-            //loop for row
-            for (int i = 0; i < 8; i++)
+            try
             {
-                j = 0;
-                if (i % 2 == 0) //if Even
-                {
-                    x = 20 + 70; //1st even picturebox location
-                    j = j + 1; //to get 1st col(i.e 1) and so on
-                }
-                else
-                {
-                    x = 20; //otherwise make box  from starting location (i.e for old row)
-                }
-                while (j < 8) //loop for col
-                {
-                    Board[i, j] = new PictureBox();
-                    Board[i, j].Location = new Point(x, y);
-                    Board[i, j].Size = new Size(70, 70);
-                    Board[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
-                    Board[i, j].BackColor = Color.Black;
 
-                    Board[i, j].AccessibleName = "none";
-                    Board[i, j].BackgroundImageLayout = ImageLayout.Stretch;
-                    Board[i, j].Tag = i.ToString() + j.ToString(); // naming tag according to row and col(to store reference of object)
-                    Board[i, j].Click += new EventHandler(Clicked);// Create a click event(Event Handler)
-                    this.Controls.Add(Board[i, j]); //Add all these controls
-                    x += 140; // 70+70 to get picturebox
-                    j = j + 2; //2 col difference
-                } //while loop end
-                y += 70; //along y only 70 difference
-            } //for loop end
+
+                int x = 20; //starting location along x-axis
+                int y = 20; //starting location along y-axis
+                int j = 0;
+                //loop for row
+                for (int i = 0; i < 8; i++)
+                {
+                    j = 0;
+                    if (i % 2 == 0) //if Even
+                    {
+                        x = 20 + 70; //1st even picturebox location
+                        j = j + 1; //to get 1st col(i.e 1) and so on
+                    }
+                    else
+                    {
+                        x = 20; //otherwise make box  from starting location (i.e for old row)
+                    }
+                    while (j < 8) //loop for col
+                    {
+                        Board[i, j] = new PictureBox();
+                        Board[i, j].Location = new Point(x, y);
+                        Board[i, j].Size = new Size(70, 70);
+                        Board[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
+                        Board[i, j].BackColor = Color.Black;
+
+                        Board[i, j].AccessibleName = "none";
+                        Board[i, j].BackgroundImageLayout = ImageLayout.Stretch;
+                        Board[i, j].Tag = i.ToString() + j.ToString(); // naming tag according to row and col(to store reference of object)
+                        Board[i, j].Click += new EventHandler(Clicked);// Create a click event(Event Handler)
+                        this.Controls.Add(Board[i, j]); //Add all these controls
+                        x += 140; // 70+70 to get picturebox
+                        j = j + 2; //2 col difference
+                    } //while loop end
+                    y += 70; //along y only 70 difference
+                } //for loop end
+            }
+            catch(Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
         }
 
         private void settingpieces()
@@ -180,10 +196,10 @@ namespace MyCheckerGame
             string location = clickedBox.Tag.ToString(); //convert tag into string and save it in location
             row = Convert.ToInt32(location[0]) - 48; //to get row no instead of its asscci value
             col = Convert.ToInt32(location[1]) - 48; //to get col no instead of its asscci value
-
+           
             if (click == 0 && clickedBox.AccessibleName == "blue") //simple blue
             {
-
+                simpleclicksound.Play();
                 Firstclickbox = Board[row, col]; //on which we 1st click
 
                 if ((row + 1 < 8) && (col - 1 >= 0)) //leftdiagnoldown possible
@@ -249,6 +265,7 @@ namespace MyCheckerGame
 
             else if (click == 0 && clickedBox.AccessibleName == "blueking") //when clicked on blueking
             {
+                simpleclicksound.Play();
                 Firstclickbox = Board[row, col]; //on which we 1st click
 
                 if ((row + 1 < 8) && (col - 1 >= 0))//leftdiagonaldown exist
@@ -405,6 +422,14 @@ namespace MyCheckerGame
                         //Clear the leftjumpboxup
                         leftjumpboxup.BackgroundImage = null;
                         leftjumpboxup.AccessibleName = "none";
+
+                        //jump sound
+                        jumpsound.Play();
+
+                        //update bluepiece score
+                        scoreblue++;
+                        bluescorelabel.Text = scoreblue.ToString();
+                        bluescoreupdate(); //Function call of bluescoreupdate
                         
                     }
                     else if (leftjumpboxdown != null && clickedBox == leftdiagnoldown)//if leftjumpboxdown exist and clicked on leftdiagonaldown
@@ -412,6 +437,14 @@ namespace MyCheckerGame
                         //Clear the leftjumpboxdown
                         leftjumpboxdown.BackgroundImage = null;
                         leftjumpboxdown.AccessibleName = "none";
+
+                        //jump sound
+                        jumpsound.Play();
+
+                        //update bluepiece score
+                        scoreblue++;
+                        bluescorelabel.Text = scoreblue.ToString();
+                        bluescoreupdate(); //Function call of bluescoreupdate
                         
                     }
 
@@ -420,6 +453,14 @@ namespace MyCheckerGame
                         //Clear the rightjumpboxup
                         rightjumpboxup.BackgroundImage = null;
                         rightjumpboxup.AccessibleName = "none";
+
+                        //jumpsound
+                        jumpsound.Play();
+
+                        //update bluepiece score
+                        scoreblue++;
+                        bluescorelabel.Text = scoreblue.ToString();
+                        bluescoreupdate(); //Function call of bluescoreupdate
                         
                     }
                     else if (rightjumpboxdown != null && clickedBox == rightdiagnoldown) //if rightjumpboxdown exist and clicked on rightdiagonaldown
@@ -427,6 +468,14 @@ namespace MyCheckerGame
                         //Clear the rightjumpboxdown
                         rightjumpboxdown.BackgroundImage = null;
                         rightjumpboxdown.AccessibleName = "none";
+
+                        //jumpsound
+                        jumpsound.Play();
+
+                        //update bluepiece score
+                        scoreblue++;
+                        bluescorelabel.Text = scoreblue.ToString();
+                        bluescoreupdate(); //Function call of bluescoreupdate
                         
                     }
 
@@ -472,7 +521,7 @@ namespace MyCheckerGame
             }
         }
 
-
+       
         //For red check left up diagonal(leftjumpboxup) and right up diagonal (rightjumpboxup)
         private void redturn(PictureBox clickedBox)
         {
@@ -484,6 +533,7 @@ namespace MyCheckerGame
 
             if (click == 0 && clickedBox.AccessibleName == "red") //for simple red piece
             {
+                simpleclicksound.Play();
                 Firstclickbox = Board[row, col]; //firstbox on which we click
 
                 if ((row - 1 >= 0) && (col - 1 >= 0)) //left diagonal up is possible
@@ -547,6 +597,7 @@ namespace MyCheckerGame
 
             else if (click == 0 && clickedBox.AccessibleName == "redking") //when cliked on redking
             {
+                simpleclicksound.Play();
                 Firstclickbox = Board[row, col]; //on which we 1st click
 
                 if ((row + 1 < 8) && (col - 1 >= 0)) //leftdiagonaldown possible
@@ -704,24 +755,56 @@ namespace MyCheckerGame
                         //Clear the leftjumpboxup
                         leftjumpboxup.BackgroundImage = null;
                         leftjumpboxup.AccessibleName = "none";
+
+                        //jump sound
+                        jumpsound.Play();
+
+                        //update redpiece score
+                        scorered++;
+                        redscorelabel.Text = scorered.ToString();
+                        redscoreupdate(); //Function call of redscoreupdate
                     }
                     else if (leftjumpboxdown != null && clickedBox == leftdiagnoldown) //if leftjumpboxdown exist and clicked on leftdiagonaldown
                     {
                         //Clear the leftjumpboxdown
                         leftjumpboxdown.BackgroundImage = null;
                         leftjumpboxdown.AccessibleName = "none";
+
+                        //jump sound
+                        jumpsound.Play();
+
+                        //update redpiece score
+                        scorered++;
+                        redscorelabel.Text = scorered.ToString();
+                        redscoreupdate(); //Function call of redscoreupdate
                     }
                     else if (rightjumpboxup != null && clickedBox == rightdiagnolup) //if rightjumpboxup exist and clicked on rightdiagonalup
                     {
                         //Clear the rightjumpboxup
                         rightjumpboxup.BackgroundImage = null;
                         rightjumpboxup.AccessibleName = "none";
+
+                        //jump sound
+                        jumpsound.Play();
+
+                        //update redpiece score
+                        scorered++;
+                        redscorelabel.Text = scorered.ToString();
+                        redscoreupdate(); //Function call of redscoreupdate
                     }
-                    else if (rightjumpboxdown != null && clickedBox == rightdiagnoldown) //ifrightjumpboxdown exist and clicked on rightdiagonaldown
+                    else if (rightjumpboxdown != null && clickedBox == rightdiagnoldown) //if rightjumpboxdown exist and clicked on rightdiagonaldown
                     {
                         //Clear the rightjumpboxdown
                         rightjumpboxdown.BackgroundImage = null;
                         rightjumpboxdown.AccessibleName = "none";
+
+                        //jump sound
+                        jumpsound.Play();
+
+                        //update redpiece score
+                        scorered++;
+                        redscorelabel.Text = scorered.ToString();
+                        redscoreupdate(); //Function call of redscoreupdate
                     }
 
                     click = 0; //reset click to 0
@@ -766,6 +849,7 @@ namespace MyCheckerGame
             }
 
         }
+        //blue piece score
        public void bluescoreupdate()
         {
            if(scoreblue==1)
@@ -817,6 +901,58 @@ namespace MyCheckerGame
                r12.BackgroundImage = MyCheckerGame.Properties.Resources.red_piece;
            }
         }
+        //red piece score
+        public void redscoreupdate()
+       {
+            if(scorered==1)
+            {
+                b1.BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
+            }
+            else if(scorered==2)
+            {
+                b2.BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
+            }
+            else if(scorered==3)
+            {
+                b3.BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
+            }
+            else if(scorered==4)
+            {
+                b4.BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
+            }
+            else if(scorered==5)
+            {
+                b5.BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
+            }
+            else if (scorered == 6)
+            {
+                b6.BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
+            }
+            else if(scorered==7)
+            {
+                b7.BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
+            }
+            else if(scorered==8)
+            {
+                b8.BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
+            }
+            else if(scorered==9)
+            {
+                b9.BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
+            }
+            else if(scorered==10)
+            {
+                b10.BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
+            }
+            else if(scorered==11)
+            {
+                b11.BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
+            }
+            else if(scorered==12)
+            {
+                b12.BackgroundImage = MyCheckerGame.Properties.Resources.blue_piece;
+            }
+       }
     }
 }
 
