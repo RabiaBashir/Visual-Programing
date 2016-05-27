@@ -17,7 +17,7 @@ namespace MyCheckerGame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());  //Our Form 1 object
+            Application.Run(new CheckerGame());  //Our Form 1 object
         }
     }
 }

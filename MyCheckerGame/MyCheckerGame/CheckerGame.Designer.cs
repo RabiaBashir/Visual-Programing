@@ -1,6 +1,6 @@
 ﻿namespace MyCheckerGame
 {
-    partial class Form1
+    partial class CheckerGame
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckerGame));
             this.boardpanel = new System.Windows.Forms.Panel();
+            this.winingpanel = new System.Windows.Forms.Panel();
             this.pictureBox58 = new System.Windows.Forms.PictureBox();
             this.pictureBox50 = new System.Windows.Forms.PictureBox();
             this.pictureBox37 = new System.Windows.Forms.PictureBox();
@@ -121,6 +122,7 @@
             this.boardpanel.BackColor = System.Drawing.Color.White;
             this.boardpanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.boardpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.boardpanel.Controls.Add(this.winingpanel);
             this.boardpanel.Controls.Add(this.pictureBox58);
             this.boardpanel.Controls.Add(this.pictureBox50);
             this.boardpanel.Controls.Add(this.pictureBox37);
@@ -131,9 +133,19 @@
             this.boardpanel.Location = new System.Drawing.Point(20, 20);
             this.boardpanel.Name = "boardpanel";
             this.boardpanel.Size = new System.Drawing.Size(560, 560);
-            this.boardpanel.TabIndex = 1;
+            this.boardpanel.TabIndex = 6;
             this.boardpanel.Tag = "";
             this.boardpanel.Click += new System.EventHandler(this.Clicked);
+            // 
+            // winingpanel
+            // 
+            this.winingpanel.BackColor = System.Drawing.Color.Transparent;
+            this.winingpanel.BackgroundImage = global::MyCheckerGame.Properties.Resources.red_wins;
+            this.winingpanel.Location = new System.Drawing.Point(122, 150);
+            this.winingpanel.Name = "winingpanel";
+            this.winingpanel.Size = new System.Drawing.Size(505, 300);
+            this.winingpanel.TabIndex = 5;
+            this.winingpanel.Visible = false;
             // 
             // pictureBox58
             // 
@@ -653,7 +665,7 @@
             this.panelturn.Size = new System.Drawing.Size(20, 246);
             this.panelturn.TabIndex = 58;
             // 
-            // Form1
+            // CheckerGame
             // 
             this.AccessibleName = "blue";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -663,10 +675,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1073, 603);
             this.Controls.Add(this.panelturn);
-            this.Controls.Add(this.boardpanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ScorePanel);
-            this.Name = "Form1";
+            this.Controls.Add(this.boardpanel);
+            this.Name = "CheckerGame";
             this.Tag = "";
             this.Text = "Checker Game";
             this.boardpanel.ResumeLayout(false);
@@ -761,6 +773,7 @@
         private System.Windows.Forms.Label redscorelabel;
         private System.Windows.Forms.Label bluescorelabel;
         private System.Windows.Forms.Panel panelturn;
+        private System.Windows.Forms.Panel winingpanel;
 
 
     }

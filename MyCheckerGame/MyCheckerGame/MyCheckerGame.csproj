@@ -44,17 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="CheckerGame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CheckerGame.Designer.cs">
+      <DependentUpon>CheckerGame.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1_2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="CheckerGame.resx">
+      <DependentUpon>CheckerGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +91,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\simple_clicksound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue_wins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_wins.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
