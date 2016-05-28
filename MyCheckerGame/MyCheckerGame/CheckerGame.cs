@@ -205,7 +205,7 @@ namespace MyCheckerGame
                 string location = clickedBox.Tag.ToString(); //convert tag into string and save it in location
                 row = Convert.ToInt32(location[0]) - 48; //to get row no instead of its asscci value
                 col = Convert.ToInt32(location[1]) - 48; //to get col no instead of its asscci value
-
+                
                 if (click == 0 && clickedBox.AccessibleName == "blue") //simple blue
                 {
                     simpleclicksound.Play();
@@ -926,8 +926,8 @@ namespace MyCheckerGame
                  if (scoreblue == 12)
                 {
                     winingpanel.BackgroundImage = MyCheckerGame.Properties.Resources.blue_wins;
-                    winingpanel.Visible = true;
                     winingpanel.BringToFront();
+                    winingpanel.Visible = true;
                 }
             }
            catch(Exception bluepiecescoreexception)
@@ -935,6 +935,7 @@ namespace MyCheckerGame
                 MessageBox.Show(bluepiecescoreexception.Message);
             }
         }
+        
         //red piece score
        public void redscoreupdate()
        {

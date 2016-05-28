@@ -42,6 +42,10 @@
             this.r1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.ScorePanel = new System.Windows.Forms.Panel();
+            this.redscorelabel = new System.Windows.Forms.Label();
+            this.bluescorelabel = new System.Windows.Forms.Label();
+            this.redImage = new System.Windows.Forms.PictureBox();
+            this.blueImage = new System.Windows.Forms.PictureBox();
             this.redscorepanel = new System.Windows.Forms.Panel();
             this.b1 = new System.Windows.Forms.PictureBox();
             this.b2 = new System.Windows.Forms.PictureBox();
@@ -67,13 +71,6 @@
             this.r8 = new System.Windows.Forms.PictureBox();
             this.r6 = new System.Windows.Forms.PictureBox();
             this.r7 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.redscorelabel = new System.Windows.Forms.Label();
-            this.bluescorelabel = new System.Windows.Forms.Label();
-            this.Red = new System.Windows.Forms.Label();
-            this.Blue = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelturn = new System.Windows.Forms.Panel();
             this.boardpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).BeginInit();
@@ -86,6 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.r1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.ScorePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.redImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueImage)).BeginInit();
             this.redscorepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.b1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b2)).BeginInit();
@@ -111,9 +110,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.r8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.r6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.r7)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // boardpanel
@@ -122,7 +118,6 @@
             this.boardpanel.BackColor = System.Drawing.Color.White;
             this.boardpanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.boardpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.boardpanel.Controls.Add(this.winingpanel);
             this.boardpanel.Controls.Add(this.pictureBox58);
             this.boardpanel.Controls.Add(this.pictureBox50);
             this.boardpanel.Controls.Add(this.pictureBox37);
@@ -135,13 +130,12 @@
             this.boardpanel.Size = new System.Drawing.Size(560, 560);
             this.boardpanel.TabIndex = 6;
             this.boardpanel.Tag = "";
-            this.boardpanel.Click += new System.EventHandler(this.Clicked);
             // 
             // winingpanel
             // 
-            this.winingpanel.BackColor = System.Drawing.Color.Transparent;
+            this.winingpanel.BackColor = System.Drawing.Color.White;
             this.winingpanel.BackgroundImage = global::MyCheckerGame.Properties.Resources.red_wins;
-            this.winingpanel.Location = new System.Drawing.Point(122, 150);
+            this.winingpanel.Location = new System.Drawing.Point(100, 156);
             this.winingpanel.Name = "winingpanel";
             this.winingpanel.Size = new System.Drawing.Size(505, 300);
             this.winingpanel.TabIndex = 5;
@@ -245,10 +239,11 @@
             // 
             this.Score.AutoSize = true;
             this.Score.BackColor = System.Drawing.Color.Transparent;
-            this.Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
+            this.Score.ForeColor = System.Drawing.Color.White;
             this.Score.Location = new System.Drawing.Point(26, 8);
             this.Score.Name = "Score";
-            this.Score.Size = new System.Drawing.Size(175, 31);
+            this.Score.Size = new System.Drawing.Size(206, 37);
             this.Score.TabIndex = 0;
             this.Score.Text = "Score Board";
             // 
@@ -274,14 +269,64 @@
             // ScorePanel
             // 
             this.ScorePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ScorePanel.BackgroundImage")));
+            this.ScorePanel.Controls.Add(this.redscorelabel);
+            this.ScorePanel.Controls.Add(this.bluescorelabel);
+            this.ScorePanel.Controls.Add(this.redImage);
+            this.ScorePanel.Controls.Add(this.blueImage);
             this.ScorePanel.Controls.Add(this.redscorepanel);
             this.ScorePanel.Controls.Add(this.bluescorepanel);
             this.ScorePanel.Controls.Add(this.pictureBox3);
             this.ScorePanel.Controls.Add(this.Score);
-            this.ScorePanel.Location = new System.Drawing.Point(751, 50);
+            this.ScorePanel.Location = new System.Drawing.Point(603, 20);
             this.ScorePanel.Name = "ScorePanel";
-            this.ScorePanel.Size = new System.Drawing.Size(271, 530);
-            this.ScorePanel.TabIndex = 2;
+            this.ScorePanel.Size = new System.Drawing.Size(343, 560);
+            this.ScorePanel.TabIndex = 7;
+            // 
+            // redscorelabel
+            // 
+            this.redscorelabel.AutoSize = true;
+            this.redscorelabel.BackColor = System.Drawing.Color.Transparent;
+            this.redscorelabel.Font = new System.Drawing.Font("Algerian", 18F, System.Drawing.FontStyle.Bold);
+            this.redscorelabel.ForeColor = System.Drawing.Color.Crimson;
+            this.redscorelabel.Location = new System.Drawing.Point(25, 337);
+            this.redscorelabel.Name = "redscorelabel";
+            this.redscorelabel.Size = new System.Drawing.Size(27, 26);
+            this.redscorelabel.TabIndex = 8;
+            this.redscorelabel.Text = "0";
+            // 
+            // bluescorelabel
+            // 
+            this.bluescorelabel.AutoSize = true;
+            this.bluescorelabel.BackColor = System.Drawing.Color.Transparent;
+            this.bluescorelabel.Font = new System.Drawing.Font("Algerian", 18F, System.Drawing.FontStyle.Bold);
+            this.bluescorelabel.ForeColor = System.Drawing.Color.SteelBlue;
+            this.bluescorelabel.Location = new System.Drawing.Point(25, 202);
+            this.bluescorelabel.Name = "bluescorelabel";
+            this.bluescorelabel.Size = new System.Drawing.Size(27, 26);
+            this.bluescorelabel.TabIndex = 7;
+            this.bluescorelabel.Text = "0";
+            // 
+            // redImage
+            // 
+            this.redImage.BackColor = System.Drawing.Color.Transparent;
+            this.redImage.BackgroundImage = global::MyCheckerGame.Properties.Resources.red_piece;
+            this.redImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.redImage.Location = new System.Drawing.Point(6, 374);
+            this.redImage.Name = "redImage";
+            this.redImage.Size = new System.Drawing.Size(70, 70);
+            this.redImage.TabIndex = 8;
+            this.redImage.TabStop = false;
+            // 
+            // blueImage
+            // 
+            this.blueImage.BackColor = System.Drawing.Color.Transparent;
+            this.blueImage.BackgroundImage = global::MyCheckerGame.Properties.Resources.blue_piece;
+            this.blueImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.blueImage.Location = new System.Drawing.Point(3, 129);
+            this.blueImage.Name = "blueImage";
+            this.blueImage.Size = new System.Drawing.Size(70, 70);
+            this.blueImage.TabIndex = 7;
+            this.blueImage.TabStop = false;
             // 
             // redscorepanel
             // 
@@ -299,10 +344,10 @@
             this.redscorepanel.Controls.Add(this.b4);
             this.redscorepanel.Controls.Add(this.b5);
             this.redscorepanel.Controls.Add(this.b3);
-            this.redscorepanel.Location = new System.Drawing.Point(6, 328);
+            this.redscorepanel.Location = new System.Drawing.Point(83, 308);
             this.redscorepanel.Name = "redscorepanel";
-            this.redscorepanel.Size = new System.Drawing.Size(227, 199);
-            this.redscorepanel.TabIndex = 27;
+            this.redscorepanel.Size = new System.Drawing.Size(238, 198);
+            this.redscorepanel.TabIndex = 5;
             // 
             // b1
             // 
@@ -452,10 +497,10 @@
             this.bluescorepanel.Controls.Add(this.r8);
             this.bluescorepanel.Controls.Add(this.r6);
             this.bluescorepanel.Controls.Add(this.r7);
-            this.bluescorepanel.Location = new System.Drawing.Point(3, 42);
+            this.bluescorepanel.Location = new System.Drawing.Point(79, 56);
             this.bluescorepanel.Name = "bluescorepanel";
-            this.bluescorepanel.Size = new System.Drawing.Size(230, 171);
-            this.bluescorepanel.TabIndex = 26;
+            this.bluescorepanel.Size = new System.Drawing.Size(242, 189);
+            this.bluescorepanel.TabIndex = 6;
             // 
             // r12
             // 
@@ -578,84 +623,6 @@
             this.r7.TabIndex = 20;
             this.r7.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.redscorelabel);
-            this.panel1.Controls.Add(this.bluescorelabel);
-            this.panel1.Controls.Add(this.Red);
-            this.panel1.Controls.Add(this.Blue);
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(621, 58);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(127, 519);
-            this.panel1.TabIndex = 3;
-            // 
-            // redscorelabel
-            // 
-            this.redscorelabel.AutoSize = true;
-            this.redscorelabel.ForeColor = System.Drawing.Color.Red;
-            this.redscorelabel.Location = new System.Drawing.Point(37, 416);
-            this.redscorelabel.Name = "redscorelabel";
-            this.redscorelabel.Size = new System.Drawing.Size(13, 13);
-            this.redscorelabel.TabIndex = 5;
-            this.redscorelabel.Text = "0";
-            // 
-            // bluescorelabel
-            // 
-            this.bluescorelabel.AutoSize = true;
-            this.bluescorelabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.bluescorelabel.Location = new System.Drawing.Point(37, 97);
-            this.bluescorelabel.Name = "bluescorelabel";
-            this.bluescorelabel.Size = new System.Drawing.Size(13, 13);
-            this.bluescorelabel.TabIndex = 4;
-            this.bluescorelabel.Text = "0";
-            // 
-            // Red
-            // 
-            this.Red.AutoSize = true;
-            this.Red.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Red.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Red.Location = new System.Drawing.Point(82, 456);
-            this.Red.Name = "Red";
-            this.Red.Size = new System.Drawing.Size(42, 20);
-            this.Red.TabIndex = 3;
-            this.Red.Text = "Red";
-            // 
-            // Blue
-            // 
-            this.Blue.AutoSize = true;
-            this.Blue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Blue.ForeColor = System.Drawing.Color.Navy;
-            this.Blue.Location = new System.Drawing.Point(79, 42);
-            this.Blue.Name = "Blue";
-            this.Blue.Size = new System.Drawing.Size(45, 20);
-            this.Blue.TabIndex = 2;
-            this.Blue.Text = "Blue";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.BackgroundImage = global::MyCheckerGame.Properties.Resources.red_piece;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(9, 432);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::MyCheckerGame.Properties.Resources.blue_piece;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panelturn
             // 
             this.panelturn.BackColor = System.Drawing.Color.Transparent;
@@ -667,15 +634,13 @@
             // 
             // CheckerGame
             // 
-            this.AccessibleName = "blue";
+            this.AccessibleName = "";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1073, 603);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(986, 601);
+            this.Controls.Add(this.winingpanel);
             this.Controls.Add(this.panelturn);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ScorePanel);
             this.Controls.Add(this.boardpanel);
             this.Name = "CheckerGame";
@@ -693,6 +658,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ScorePanel.ResumeLayout(false);
             this.ScorePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.redImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueImage)).EndInit();
             this.redscorepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.b1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b2)).EndInit();
@@ -718,10 +685,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.r8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.r6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.r7)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -740,9 +703,6 @@
         private System.Windows.Forms.PictureBox r1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel ScorePanel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox b3;
         private System.Windows.Forms.PictureBox b2;
         private System.Windows.Forms.PictureBox b1;
@@ -768,12 +728,12 @@
         private System.Windows.Forms.PictureBox r4;
         private System.Windows.Forms.Panel bluescorepanel;
         private System.Windows.Forms.Panel redscorepanel;
-        private System.Windows.Forms.Label Blue;
-        private System.Windows.Forms.Label Red;
-        private System.Windows.Forms.Label redscorelabel;
-        private System.Windows.Forms.Label bluescorelabel;
         private System.Windows.Forms.Panel panelturn;
         private System.Windows.Forms.Panel winingpanel;
+        private System.Windows.Forms.Label redscorelabel;
+        private System.Windows.Forms.Label bluescorelabel;
+        private System.Windows.Forms.PictureBox redImage;
+        private System.Windows.Forms.PictureBox blueImage;
 
 
     }
